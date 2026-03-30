@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>데일리 브리프 | 2026-03-31</title>
+<style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#0f1117;color:#e8eaf0;font-family:'Pretendard','Noto Sans KR',Arial,sans-serif;line-height:1.7;font-size:15px}
+    a{color:#4f8ef7;text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .topbar{background:#1a1d27;border-bottom:1px solid #2e3350;padding:14px 0;position:sticky;top:0;z-index:100}
+    .topbar-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{font-size:18px;font-weight:700;color:#4f8ef7;letter-spacing:-0.5px}
+    .logo span{color:#e8eaf0}
+    .nav-dates{display:flex;gap:8px;flex-wrap:wrap}
+    .nav-dates a{padding:4px 12px;border-radius:20px;font-size:13px;border:1px solid #2e3350;color:#8892b0;transition:all .2s}
+    .nav-dates a:hover,.nav-dates a.active{background:#4f8ef7;color:#fff;border-color:#4f8ef7;text-decoration:none}
+
+    .hero{background:linear-gradient(135deg,#1a1d27 0%,#22263a 100%);border-bottom:1px solid #2e3350;padding:32px 0 24px}
+    .hero-inner{max-width:1100px;margin:0 auto;padding:0 24px}
+    .hero-date{font-size:13px;color:#8892b0;margin-bottom:6px}
+    .hero-title{font-size:26px;font-weight:700;color:#e8eaf0;margin-bottom:8px}
+    .hero-sub{font-size:14px;color:#8892b0}
+    .tags{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+    .tag{padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600}
+    .tag-report{background:#1a3a5c;color:#4f8ef7}
+    .tag-youtube{background:#2a1a3a;color:#7c5cfc}
+    .tag-ai{background:#1a2a1a;color:#2ecc71}
+
+    .main{max-width:1100px;margin:0 auto;padding:32px 24px;display:grid;grid-template-columns:1fr 320px;gap:28px}
+    @media(max-width:900px){.main{grid-template-columns:1fr}}
+
+    .section-title{font-size:11px;font-weight:700;letter-spacing:1.5px;color:#8892b0;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+    .section-title::after{content:'';flex:1;height:1px;background:#2e3350}
+
+    .card{background:#1a1d27;border:1px solid #2e3350;border-radius:12px;padding:22px;margin-bottom:20px;transition:border-color .2s}
+    .card:hover{border-color:#4f8ef7}
+    .card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}
+    .card-title{font-size:17px;font-weight:700;color:#e8eaf0;line-height:1.4}
+    .card-source{font-size:12px;color:#8892b0;margin-top:4px}
+    .card-badge{padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap}
+    .badge-report{background:#1a3a5c;color:#4f8ef7}
+    .badge-youtube{background:#2a1a3a;color:#7c5cfc}
+
+    .macro-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:20px}
+    .macro-item{background:#22263a;border:1px solid #2e3350;border-radius:8px;padding:12px}
+    .macro-key{font-size:11px;color:#8892b0;margin-bottom:4px}
+    .macro-val{font-size:14px;font-weight:600;color:#e8eaf0}
+
+    .block-title{font-size:12px;font-weight:700;color:#8892b0;text-transform:uppercase;letter-spacing:1px;margin:18px 0 8px}
+    ul.dots{list-style:none;padding:0}
+    ul.dots li{padding:5px 0 5px 18px;position:relative;color:#e8eaf0;font-size:14px;border-bottom:1px solid #2e3350}
+    ul.dots li:last-child{border-bottom:none}
+    ul.dots li::before{content:'▸';position:absolute;left:0;color:#4f8ef7;font-size:12px;top:6px}
+
+    .thesis-block{background:#22263a;border-left:3px solid #4f8ef7;border-radius:0 8px 8px 0;padding:14px 16px;margin-bottom:16px}
+    .thesis-author{font-size:12px;color:#4f8ef7;font-weight:700;margin-bottom:4px}
+    .thesis-text{font-size:14px;color:#e8eaf0;line-height:1.6}
+
+    .chain-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:16px}
+    .chain-card{background:#22263a;border:1px solid #2e3350;border-radius:8px;padding:14px}
+    .chain-industry{font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:10px}
+    .chain-label{font-size:11px;font-weight:700;letter-spacing:0.5px;margin:6px 0 3px}
+    .chain-label.green{color:#2ecc71}
+    .chain-label.red{color:#e74c3c}
+    .chain-label.yellow{color:#f39c12}
+    .chain-item{font-size:12px;color:#8892b0;padding:2px 0 2px 10px;border-left:2px solid #2e3350}
+
+    .scenario-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+    @media(max-width:700px){.scenario-cards{grid-template-columns:1fr}}
+    .scenario-card{background:#22263a;border:1px solid #2e3350;border-radius:8px;padding:14px}
+    .scenario-name{font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:10px}
+    .scenario-label{font-size:11px;font-weight:700;margin:6px 0 3px}
+    .scenario-label.buy{color:#2ecc71}
+    .scenario-label.avoid{color:#e74c3c}
+    .scenario-item{font-size:12px;color:#8892b0;padding:2px 0}
+
+    .insight-list{list-style:none;counter-reset:ins}
+    .insight-list li{counter-increment:ins;padding:10px 0 10px 36px;position:relative;border-bottom:1px solid #2e3350;font-size:14px}
+    .insight-list li:last-child{border-bottom:none}
+    .insight-list li::before{content:counter(ins);position:absolute;left:0;width:24px;height:24px;background:#4f8ef7;color:#fff;border-radius:50%;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;top:10px}
+
+    .risk-table{width:100%;border-collapse:collapse;font-size:13px}
+    .risk-table th{background:#22263a;color:#8892b0;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;text-align:left;border-bottom:1px solid #2e3350}
+    .risk-table td{padding:10px 12px;border-bottom:1px solid #2e3350;vertical-align:top}
+    .risk-table tr:last-child td{border-bottom:none}
+    .risk-name{font-weight:700;color:#e74c3c}
+
+    .yt-card{background:#1a1d27;border:1px solid #2e3350;border-radius:12px;padding:22px;margin-bottom:20px}
+    .yt-meta{font-size:12px;color:#8892b0;margin-bottom:8px}
+    .yt-title{font-size:16px;font-weight:700;color:#e8eaf0;margin-bottom:12px;line-height:1.4}
+    .yt-title a{color:#e8eaf0}
+    .yt-title a:hover{color:#4f8ef7}
+    .yt-summary{font-size:14px;color:#8892b0;background:#22263a;border-radius:8px;padding:12px;margin-bottom:14px;line-height:1.6}
+    .action-items{background:linear-gradient(135deg,#0d2137,#1a1d27);border:1px solid #1a3a5c;border-radius:8px;padding:14px}
+    .action-title{font-size:11px;font-weight:700;color:#4f8ef7;letter-spacing:1px;margin-bottom:10px}
+    .action-item{display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #2e3350;font-size:13px}
+    .action-item:last-child{border-bottom:none}
+    .action-num{width:20px;height:20px;background:#4f8ef7;color:#fff;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+
+    .sidebar{}
+    .sidebar-card{background:#1a1d27;border:1px solid #2e3350;border-radius:12px;padding:18px;margin-bottom:16px}
+    .sidebar-title{font-size:12px;font-weight:700;color:#8892b0;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+    .sidebar-item{padding:8px 0;border-bottom:1px solid #2e3350;font-size:13px;display:flex;justify-content:space-between;align-items:center}
+    .sidebar-item:last-child{border-bottom:none}
+    .sidebar-key{color:#8892b0}
+    .sidebar-val{font-weight:600;color:#e8eaf0}
+    .archive-item{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #2e3350;font-size:13px}
+    .archive-item:last-child{border-bottom:none}
+    .archive-date{color:#4f8ef7}
+    .archive-count{color:#8892b0;font-size:12px}
+
+    .footer{border-top:1px solid #2e3350;padding:24px;text-align:center;font-size:12px;color:#8892b0;margin-top:32px}
+    
+    .tab-radio{display:none}
+    .tab-bar{display:flex;gap:0;border-bottom:2px solid #2e3350;margin-bottom:24px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .tab-btn{padding:11px 22px;font-size:14px;font-weight:600;color:#8892b0;background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;display:flex;align-items:center;gap:7px;user-select:none;-webkit-user-select:none;white-space:nowrap}
+    .tab-btn:hover{color:#e8eaf0}
+    .tab-badge{background:#22263a;color:#8892b0;border-radius:10px;font-size:11px;padding:1px 7px;font-weight:700}
+    .tab-panel{display:none}
+    
+    #pgtr:checked~.pgtbar label[for="pgtr"],
+    #pgty:checked~.pgtbar label[for="pgty"],
+    #pgtt:checked~.pgtbar label[for="pgtt"]{color:#4f8ef7;border-bottom:2px solid #4f8ef7;margin-bottom:-2px}
+    #pgtr:checked~.pgtbar label[for="pgtr"] .tab-badge,
+    #pgty:checked~.pgtbar label[for="pgty"] .tab-badge,
+    #pgtt:checked~.pgtbar label[for="pgtt"] .tab-badge{background:#4f8ef7;color:#fff}
+    #pgtr:checked~#pgtrp,#pgty:checked~#pgtyp,#pgtt:checked~#pgttp{display:block}
+    </style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="logo">Daily<span>Brief</span></div>
+    <div class="nav-dates"><a href="2026-03-31.html" class="active">03-31</a><a href="2026-03-30.html" class="">03-30</a><a href="2026-03-29.html" class="">03-29</a><a href="index.html" style="font-size:12px">전체 →</a></div>
+  </div>
+</div>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-date">2026년 03월 31일</div>
+    <div class="hero-title">투자 리서치 · 시황 분석 · AI 인사이트</div>
+    <div class="hero-sub">레포트 + 유튜브 분석을 통합한 데일리 브리프</div>
+    <div class="tags"></div>
+  </div>
+</div>
+<div class="main">
+  <div class="content">
+    <input type="radio" class="tab-radio" name="pgtabs" id="pgtr" checked>
+    <input type="radio" class="tab-radio" name="pgtabs" id="pgty">
+    <input type="radio" class="tab-radio" name="pgtabs" id="pgtt">
+    <div class="pgtbar tab-bar">
+        <label for="pgtr" class="tab-btn">📊 레포트 분석 <span class="tab-badge">0</span></label>
+        <label for="pgty" class="tab-btn">🎬 유튜브 분석 <span class="tab-badge">0</span></label>
+        <label for="pgtt" class="tab-btn">📡 텔레그램 브리핑 <span class="tab-badge">0</span></label>
+    </div>
+    <div id="pgtrp" class="tab-panel"><div style="color:#8892b0;padding:32px;text-align:center">레포트 분석 없음</div></div>
+    <div id="pgtyp" class="tab-panel"><div style="color:#8892b0;padding:32px;text-align:center">유튜브 분석 없음</div></div>
+    <div id="pgttp" class="tab-panel"><div style="color:#8892b0;padding:32px;text-align:center">오늘 텔레그램 브리핑 없음</div></div>
+    </div>
+  <div class="sidebar"><div class="sidebar-card"><div class="sidebar-title">📅 아카이브</div><div class="archive-item"><a href="2026-03-31.html" class="archive-date">2026-03-31</a><span class="archive-count">기록 있음</span></div><div class="archive-item"><a href="2026-03-30.html" class="archive-date">2026-03-30</a><span class="archive-count">기록 있음</span></div><div class="archive-item"><a href="2026-03-29.html" class="archive-date">2026-03-29</a><span class="archive-count">기록 있음</span></div></div></div>
+</div>
+<div class="footer">DailyBrief · 2026-03-31 · Generated by Claude Code</div>
+</body>
+</html>
