@@ -3,147 +3,160 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>데일리 브리프 | 2026-03-31</title>
+<title>DailyBrief | 2026-03-31</title>
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     *{margin:0;padding:0;box-sizing:border-box}
-    body{background:#0f1117;color:#e8eaf0;font-family:'Pretendard','Noto Sans KR',Arial,sans-serif;line-height:1.7;font-size:15px}
-    a{color:#4f8ef7;text-decoration:none}
-    a:hover{text-decoration:underline}
+    body{background:#0d0e12;color:#f1f2f6;font-family:'Inter','Pretendard','Noto Sans KR',sans-serif;line-height:1.6;font-size:14px;-webkit-font-smoothing:antialiased}
+    a{color:#3b82f6;text-decoration:none;transition:color .15s}
+    a:hover{color:#60a5fa;text-decoration:none}
 
-    .topbar{background:#1a1d27;border-bottom:1px solid #2e3350;padding:14px 0;position:sticky;top:0;z-index:100}
-    .topbar-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .logo{font-size:18px;font-weight:700;color:#4f8ef7;letter-spacing:-0.5px}
-    .logo span{color:#e8eaf0}
-    .nav-dates{display:flex;gap:8px;flex-wrap:wrap}
-    .nav-dates a{padding:4px 12px;border-radius:20px;font-size:13px;border:1px solid #2e3350;color:#8892b0;transition:all .2s}
-    .nav-dates a:hover,.nav-dates a.active{background:#4f8ef7;color:#fff;border-color:#4f8ef7;text-decoration:none}
+    /* ── 상단 네비게이션 ── */
+    .topbar{background:#0d0e12;border-bottom:1px solid #23242f;height:52px;position:sticky;top:0;z-index:100;backdrop-filter:blur(8px)}
+    .topbar-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{font-size:16px;font-weight:700;color:#f1f2f6;letter-spacing:-0.5px;display:flex;align-items:center;gap:6px}
+    .logo-dot{width:8px;height:8px;border-radius:50%;background:#3b82f6}
+    .nav-dates{display:flex;gap:2px;align-items:center}
+    .nav-dates a{padding:5px 12px;font-size:12px;font-weight:500;color:#6b7280;border-radius:6px;transition:all .15s;border:1px solid transparent}
+    .nav-dates a:hover{color:#f1f2f6;background:#1c1d24}
+    .nav-dates a.active{color:#3b82f6;background:rgba(59,130,246,0.1);border-color:rgba(59,130,246,0.3)}
 
-    .hero{background:linear-gradient(135deg,#1a1d27 0%,#22263a 100%);border-bottom:1px solid #2e3350;padding:32px 0 24px}
-    .hero-inner{max-width:1100px;margin:0 auto;padding:0 24px}
-    .hero-date{font-size:13px;color:#8892b0;margin-bottom:6px}
-    .hero-title{font-size:26px;font-weight:700;color:#e8eaf0;margin-bottom:8px}
-    .hero-sub{font-size:14px;color:#8892b0}
-    .tags{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
-    .tag{padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600}
-    .tag-report{background:#1a3a5c;color:#4f8ef7}
-    .tag-youtube{background:#2a1a3a;color:#7c5cfc}
-    .tag-ai{background:#1a2a1a;color:#2ecc71}
+    /* ── 히어로 섹션 ── */
+    .hero{border-bottom:1px solid #23242f;padding:28px 0 20px}
+    .hero-inner{max-width:1200px;margin:0 auto;padding:0 24px}
+    .hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:1.5px;color:#6b7280;text-transform:uppercase;margin-bottom:8px}
+    .hero-title{font-size:22px;font-weight:700;color:#f1f2f6;letter-spacing:-0.5px;margin-bottom:4px}
+    .hero-sub{font-size:13px;color:#6b7280;margin-bottom:14px}
+    .tags{display:flex;gap:6px;flex-wrap:wrap}
+    .tag{padding:2px 10px;border-radius:4px;font-size:11px;font-weight:600;letter-spacing:0.3px}
+    .tag-report{background:rgba(59,130,246,0.12);color:#3b82f6;border:1px solid rgba(59,130,246,0.25)}
+    .tag-youtube{background:rgba(139,92,246,0.12);color:#8b5cf6;border:1px solid rgba(139,92,246,0.25)}
+    .tag-ai{background:rgba(34,197,94,0.1);color:#22c55e;border:1px solid rgba(34,197,94,0.25)}
 
-    .main{max-width:1100px;margin:0 auto;padding:32px 24px;display:grid;grid-template-columns:1fr 320px;gap:28px}
-    @media(max-width:900px){.main{grid-template-columns:1fr}}
+    /* ── 메인 레이아웃 ── */
+    .main{max-width:1200px;margin:0 auto;padding:24px 24px 48px;display:grid;grid-template-columns:1fr 280px;gap:24px}
+    @media(max-width:960px){.main{grid-template-columns:1fr;padding:16px}}
 
-    .section-title{font-size:11px;font-weight:700;letter-spacing:1.5px;color:#8892b0;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
-    .section-title::after{content:'';flex:1;height:1px;background:#2e3350}
+    /* ── 섹션 타이틀 ── */
+    .section-title{font-size:10px;font-weight:700;letter-spacing:2px;color:#6b7280;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+    .section-title::after{content:'';flex:1;height:1px;background:#23242f}
 
-    .card{background:#1a1d27;border:1px solid #2e3350;border-radius:12px;padding:22px;margin-bottom:20px;transition:border-color .2s}
-    .card:hover{border-color:#4f8ef7}
-    .card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}
-    .card-title{font-size:17px;font-weight:700;color:#e8eaf0;line-height:1.4}
-    .card-source{font-size:12px;color:#8892b0;margin-top:4px}
-    .card-badge{padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap}
-    .badge-report{background:#1a3a5c;color:#4f8ef7}
-    .badge-youtube{background:#2a1a3a;color:#7c5cfc}
+    /* ── 카드 ── */
+    .card{border:1px solid #23242f;border-radius:10px;padding:20px;margin-bottom:16px;transition:border-color .2s,box-shadow .2s;background:#13141a}
+    .card:hover{border-color:rgba(59,130,246,0.4);box-shadow:0 0 0 1px rgba(59,130,246,0.1)}
+    .card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}
+    .card-title{font-size:15px;font-weight:700;color:#f1f2f6;line-height:1.45;letter-spacing:-0.2px}
+    .card-source{font-size:11px;color:#6b7280;margin-top:3px}
+    .card-badge{padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;white-space:nowrap;letter-spacing:0.5px}
+    .badge-report{background:rgba(59,130,246,0.15);color:#3b82f6}
 
-    .macro-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:20px}
-    .macro-item{background:#22263a;border:1px solid #2e3350;border-radius:8px;padding:12px}
-    .macro-key{font-size:11px;color:#8892b0;margin-bottom:4px}
-    .macro-val{font-size:14px;font-weight:600;color:#e8eaf0}
+    /* ── 매크로 그리드 ── */
+    .macro-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;margin-bottom:18px}
+    .macro-item{background:#1c1d24;border:1px solid #23242f;border-radius:8px;padding:10px 12px}
+    .macro-key{font-size:10px;color:#6b7280;margin-bottom:4px;font-weight:500;letter-spacing:0.3px}
+    .macro-val{font-size:13px;font-weight:700;color:#f1f2f6}
 
-    .block-title{font-size:12px;font-weight:700;color:#8892b0;text-transform:uppercase;letter-spacing:1px;margin:18px 0 8px}
+    /* ── 블록 요소 ── */
+    .block-title{font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:1.5px;margin:16px 0 8px;padding-bottom:6px;border-bottom:1px solid #23242f}
     ul.dots{list-style:none;padding:0}
-    ul.dots li{padding:5px 0 5px 18px;position:relative;color:#e8eaf0;font-size:14px;border-bottom:1px solid #2e3350}
+    ul.dots li{padding:6px 0 6px 14px;position:relative;color:#9ca3af;font-size:13px;border-bottom:1px solid #23242f}
     ul.dots li:last-child{border-bottom:none}
-    ul.dots li::before{content:'▸';position:absolute;left:0;color:#4f8ef7;font-size:12px;top:6px}
+    ul.dots li::before{content:'';position:absolute;left:0;top:13px;width:4px;height:4px;border-radius:50%;background:#3b82f6}
 
-    .thesis-block{background:#22263a;border-left:3px solid #4f8ef7;border-radius:0 8px 8px 0;padding:14px 16px;margin-bottom:16px}
-    .thesis-author{font-size:12px;color:#4f8ef7;font-weight:700;margin-bottom:4px}
-    .thesis-text{font-size:14px;color:#e8eaf0;line-height:1.6}
+    .thesis-block{background:#1c1d24;border-left:2px solid #3b82f6;border-radius:0 6px 6px 0;padding:12px 14px;margin-bottom:14px}
+    .thesis-author{font-size:11px;color:#3b82f6;font-weight:600;margin-bottom:3px;letter-spacing:0.3px}
+    .thesis-text{font-size:13px;color:#f1f2f6;line-height:1.65}
 
-    .chain-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:16px}
-    .chain-card{background:#22263a;border:1px solid #2e3350;border-radius:8px;padding:14px}
-    .chain-industry{font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:10px}
-    .chain-label{font-size:11px;font-weight:700;letter-spacing:0.5px;margin:6px 0 3px}
-    .chain-label.green{color:#2ecc71}
-    .chain-label.red{color:#e74c3c}
-    .chain-label.yellow{color:#f39c12}
-    .chain-item{font-size:12px;color:#8892b0;padding:2px 0 2px 10px;border-left:2px solid #2e3350}
+    .chain-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:14px}
+    .chain-card{background:#1c1d24;border:1px solid #23242f;border-radius:8px;padding:12px}
+    .chain-industry{font-size:12px;font-weight:700;color:#f1f2f6;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #23242f}
+    .chain-label{font-size:10px;font-weight:700;letter-spacing:0.8px;margin:8px 0 4px;text-transform:uppercase}
+    .chain-label.green{color:#22c55e}
+    .chain-label.red{color:#ef4444}
+    .chain-label.yellow{color:#f59e0b}
+    .chain-item{font-size:12px;color:#6b7280;padding:2px 0}
 
-    .scenario-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+    .scenario-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
     @media(max-width:700px){.scenario-cards{grid-template-columns:1fr}}
-    .scenario-card{background:#22263a;border:1px solid #2e3350;border-radius:8px;padding:14px}
-    .scenario-name{font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:10px}
-    .scenario-label{font-size:11px;font-weight:700;margin:6px 0 3px}
-    .scenario-label.buy{color:#2ecc71}
-    .scenario-label.avoid{color:#e74c3c}
-    .scenario-item{font-size:12px;color:#8892b0;padding:2px 0}
+    .scenario-card{background:#1c1d24;border:1px solid #23242f;border-radius:8px;padding:12px}
+    .scenario-name{font-size:12px;font-weight:700;color:#f1f2f6;margin-bottom:10px}
+    .scenario-label{font-size:10px;font-weight:700;margin:6px 0 3px;letter-spacing:0.8px;text-transform:uppercase}
+    .scenario-label.buy{color:#22c55e}
+    .scenario-label.avoid{color:#ef4444}
+    .scenario-item{font-size:12px;color:#6b7280;padding:2px 0}
 
     .insight-list{list-style:none;counter-reset:ins}
-    .insight-list li{counter-increment:ins;padding:10px 0 10px 36px;position:relative;border-bottom:1px solid #2e3350;font-size:14px}
+    .insight-list li{counter-increment:ins;padding:9px 0 9px 32px;position:relative;border-bottom:1px solid #23242f;font-size:13px;color:#9ca3af}
     .insight-list li:last-child{border-bottom:none}
-    .insight-list li::before{content:counter(ins);position:absolute;left:0;width:24px;height:24px;background:#4f8ef7;color:#fff;border-radius:50%;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;top:10px}
+    .insight-list li::before{content:counter(ins);position:absolute;left:0;width:20px;height:20px;background:rgba(59,130,246,0.15);color:#3b82f6;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;top:9px}
 
-    .risk-table{width:100%;border-collapse:collapse;font-size:13px}
-    .risk-table th{background:#22263a;color:#8892b0;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;text-align:left;border-bottom:1px solid #2e3350}
-    .risk-table td{padding:10px 12px;border-bottom:1px solid #2e3350;vertical-align:top}
+    .risk-table{width:100%;border-collapse:collapse;font-size:12px}
+    .risk-table th{background:#1c1d24;color:#6b7280;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:7px 10px;text-align:left;border-bottom:1px solid #23242f}
+    .risk-table td{padding:9px 10px;border-bottom:1px solid #23242f;vertical-align:top;color:#9ca3af}
     .risk-table tr:last-child td{border-bottom:none}
-    .risk-name{font-weight:700;color:#e74c3c}
+    .risk-name{font-weight:700;color:#ef4444}
 
-    .yt-card{background:#1a1d27;border:1px solid #2e3350;border-radius:12px;padding:22px;margin-bottom:20px}
-    .yt-meta{font-size:12px;color:#8892b0;margin-bottom:8px}
-    .yt-title{font-size:16px;font-weight:700;color:#e8eaf0;margin-bottom:12px;line-height:1.4}
-    .yt-title a{color:#e8eaf0}
-    .yt-title a:hover{color:#4f8ef7}
-    .yt-summary{font-size:14px;color:#8892b0;background:#22263a;border-radius:8px;padding:12px;margin-bottom:14px;line-height:1.6}
-    .action-items{background:linear-gradient(135deg,#0d2137,#1a1d27);border:1px solid #1a3a5c;border-radius:8px;padding:14px}
-    .action-title{font-size:11px;font-weight:700;color:#4f8ef7;letter-spacing:1px;margin-bottom:10px}
-    .action-item{display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #2e3350;font-size:13px}
+    /* ── 유튜브 카드 ── */
+    .yt-card{border:1px solid #23242f;border-radius:10px;padding:20px;margin-bottom:16px;background:#13141a;transition:border-color .2s}
+    .yt-card:hover{border-color:rgba(59,130,246,0.4)}
+    .yt-meta{font-size:11px;color:#6b7280;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+    .yt-meta-dot{width:3px;height:3px;border-radius:50%;background:#23242f;display:inline-block}
+    .yt-title{font-size:14px;font-weight:700;color:#f1f2f6;margin-bottom:12px;line-height:1.45;letter-spacing:-0.2px}
+    .yt-title a{color:#f1f2f6}
+    .yt-title a:hover{color:#3b82f6}
+    .yt-summary{font-size:13px;color:#6b7280;background:#1c1d24;border-radius:6px;padding:12px;margin-bottom:14px;line-height:1.65;white-space:pre-line}
+    .action-items{background:#1c1d24;border:1px solid rgba(59,130,246,0.2);border-left:2px solid #3b82f6;border-radius:0 6px 6px 0;padding:12px 14px}
+    .action-title{font-size:10px;font-weight:700;color:#3b82f6;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+    .action-item{display:flex;gap:8px;padding:5px 0;border-bottom:1px solid #23242f;font-size:12px;color:#9ca3af}
     .action-item:last-child{border-bottom:none}
-    .action-num{width:20px;height:20px;background:#4f8ef7;color:#fff;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+    .action-num{width:18px;height:18px;background:rgba(59,130,246,0.15);color:#3b82f6;border-radius:50%;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
 
-    .sidebar{}
-    .sidebar-card{background:#1a1d27;border:1px solid #2e3350;border-radius:12px;padding:18px;margin-bottom:16px}
-    .sidebar-title{font-size:12px;font-weight:700;color:#8892b0;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
-    .sidebar-item{padding:8px 0;border-bottom:1px solid #2e3350;font-size:13px;display:flex;justify-content:space-between;align-items:center}
+    /* ── 사이드바 ── */
+    .sidebar-card{border:1px solid #23242f;border-radius:10px;padding:16px;margin-bottom:14px;background:#13141a}
+    .sidebar-title{font-size:10px;font-weight:700;color:#6b7280;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid #23242f}
+    .sidebar-item{padding:7px 0;border-bottom:1px solid #23242f;font-size:12px;display:flex;justify-content:space-between;align-items:center}
     .sidebar-item:last-child{border-bottom:none}
-    .sidebar-key{color:#8892b0}
-    .sidebar-val{font-weight:600;color:#e8eaf0}
-    .archive-item{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #2e3350;font-size:13px}
+    .sidebar-key{color:#6b7280}
+    .sidebar-val{font-weight:600;color:#f1f2f6}
+    .archive-item{display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid #23242f;font-size:12px}
     .archive-item:last-child{border-bottom:none}
-    .archive-date{color:#4f8ef7}
-    .archive-count{color:#8892b0;font-size:12px}
+    .archive-date{color:#3b82f6;font-weight:500}
+    .archive-badge{font-size:10px;color:#6b7280;background:#1c1d24;padding:2px 7px;border-radius:4px}
 
-    .footer{border-top:1px solid #2e3350;padding:24px;text-align:center;font-size:12px;color:#8892b0;margin-top:32px}
+    /* ── 푸터 ── */
+    .footer{border-top:1px solid #23242f;padding:20px 24px;text-align:center;font-size:11px;color:#6b7280;margin-top:0;letter-spacing:0.3px}
     
     .tab-radio{display:none}
-    .tab-bar{display:flex;gap:0;border-bottom:2px solid #2e3350;margin-bottom:24px;overflow-x:auto;-webkit-overflow-scrolling:touch}
-    .tab-btn{padding:11px 22px;font-size:14px;font-weight:600;color:#8892b0;background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;display:flex;align-items:center;gap:7px;user-select:none;-webkit-user-select:none;white-space:nowrap}
-    .tab-btn:hover{color:#e8eaf0}
-    .tab-badge{background:#22263a;color:#8892b0;border-radius:10px;font-size:11px;padding:1px 7px;font-weight:700}
+    .tab-bar{display:flex;gap:0;border-bottom:1px solid #23242f;margin-bottom:20px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    .tab-bar::-webkit-scrollbar{display:none}
+    .tab-btn{padding:10px 18px;font-size:13px;font-weight:500;color:#6b7280;background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;display:flex;align-items:center;gap:6px;user-select:none;-webkit-user-select:none;white-space:nowrap;transition:color .15s;letter-spacing:0.1px}
+    .tab-btn:hover{color:#f1f2f6}
+    .tab-badge{background:#1c1d24;color:#6b7280;border-radius:10px;font-size:10px;padding:1px 6px;font-weight:600;min-width:18px;text-align:center}
     .tab-panel{display:none}
     
     #pgtr:checked~.pgtbar label[for="pgtr"],
     #pgty:checked~.pgtbar label[for="pgty"],
     #pgtt:checked~.pgtbar label[for="pgtt"],
-    #pgtm:checked~.pgtbar label[for="pgtm"]{color:#4f8ef7;border-bottom:2px solid #4f8ef7;margin-bottom:-2px}
+    #pgtm:checked~.pgtbar label[for="pgtm"]{color:#3b82f6;border-bottom:2px solid #3b82f6;margin-bottom:-2px}
     #pgtr:checked~.pgtbar label[for="pgtr"] .tab-badge,
     #pgty:checked~.pgtbar label[for="pgty"] .tab-badge,
     #pgtt:checked~.pgtbar label[for="pgtt"] .tab-badge,
-    #pgtm:checked~.pgtbar label[for="pgtm"] .tab-badge{background:#4f8ef7;color:#fff}
+    #pgtm:checked~.pgtbar label[for="pgtm"] .tab-badge{background:#3b82f6;color:#fff}
     #pgtr:checked~#pgtrp,#pgty:checked~#pgtyp,#pgtt:checked~#pgttp,#pgtm:checked~#pgtmp{display:block}
     </style>
 </head>
 <body>
 <div class="topbar">
   <div class="topbar-inner">
-    <div class="logo">Daily<span>Brief</span></div>
+    <div class="logo"><div class="logo-dot"></div>DailyBrief</div>
     <div class="nav-dates"><a href="2026-03-31.html" class="active">03-31</a><a href="2026-03-30.html" class="">03-30</a><a href="2026-03-29.html" class="">03-29</a><a href="index.html" style="font-size:12px">전체 →</a></div>
   </div>
 </div>
 <div class="hero">
   <div class="hero-inner">
-    <div class="hero-date">2026년 03월 31일</div>
+    <div class="hero-eyebrow">2026년 03월 31일</div>
     <div class="hero-title">투자 리서치 · 시황 분석 · AI 인사이트</div>
-    <div class="hero-sub">레포트 + 유튜브 분석을 통합한 데일리 브리프</div>
+    <div class="hero-sub">레포트 + 유튜브 + 텔레그램 브리핑 통합</div>
     <div class="tags"></div>
   </div>
 </div>
@@ -159,13 +172,13 @@
         <label for="pgtt" class="tab-btn">📡 텔레그램 브리핑 <span class="tab-badge">0</span></label>
         <label for="pgtm" class="tab-btn">📈 시황/리스크 <span class="tab-badge">1</span></label>
     </div>
-    <div id="pgtrp" class="tab-panel"><div style="color:#8892b0;padding:32px;text-align:center">레포트 분석 없음</div></div>
-    <div id="pgtyp" class="tab-panel"><div style="color:#8892b0;padding:32px;text-align:center">유튜브 분석 없음</div></div>
-    <div id="pgttp" class="tab-panel"><div style="color:#8892b0;padding:32px;text-align:center">오늘 텔레그램 브리핑 없음</div></div>
-    <div id="pgtmp" class="tab-panel"><div style="padding:8px 0"><div style="font-size:11px;color:#8892b0;margin-bottom:16px">업데이트: 2026-03-31 08:07</div><div style="background:#22263a;border:1px solid #2e3350;border-left:3px solid #f39c12;border-radius:8px;padding:16px;margin-bottom:20px"><div style="font-size:11px;font-weight:700;letter-spacing:1px;color:#f39c12;margin-bottom:10px">RISK ALERT</div><div style="padding:5px 0;color:#f39c12;font-size:13px">⚠ 고VIX → 변동성 장세, 포지션 축소 고려</div><div style="padding:5px 0;color:#f39c12;font-size:13px">⚠ 원화 약세(1,517원) → 외국인 수급 부담, 수입물가 상승</div><div style="padding:5px 0;color:#f39c12;font-size:13px">⚠ 고유가(WTI $106.3) → 인플레 재점화 우려</div></div><div style="background:#1a1d27;border:1px solid #2e3350;border-radius:10px;padding:16px;margin-bottom:20px"><div class="section-title">시황 요약</div><div style="padding:6px 0;border-bottom:1px solid #2e3350;font-size:13px;color:#e8eaf0">[변동성] VIX 28.58 → 공포 구간 (높음)</div><div style="padding:6px 0;border-bottom:1px solid #2e3350;font-size:13px;color:#e8eaf0">[주요 지수] US 30 45,160.9 (-0.12%) | US 500 6,331.7 (-0.19%) | US Tech 100 22,892.1 (-0.27%) | US 2000 2,405.1 (-0.37%) | 필라델피아 반도체 7,142.3 (-4.23%)</div><div style="padding:6px 0;border-bottom:1px solid #2e3350;font-size:13px;color:#e8eaf0">[금리] 2Y 3.838% / 10Y 4.358% → 수익률곡선 정상 (우상향) (스프레드 +0.520%)</div><div style="padding:6px 0;border-bottom:1px solid #2e3350;font-size:13px;color:#e8eaf0">[달러지수] DX 100.37 (+0.39%)</div><div style="padding:6px 0;border-bottom:1px solid #2e3350;font-size:13px;color:#e8eaf0">[환율] 달러/원 1,517.13 (-0.01%)</div><div style="padding:6px 0;border-bottom:1px solid #2e3350;font-size:13px;color:#e8eaf0">[유가] WTI 106.35 (+1.30%)</div><div style="padding:6px 0;border-bottom:1px solid #2e3350;font-size:13px;color:#e8eaf0">[금] 4,533.30 (-0.16%)</div></div><div style="margin-bottom:20px"><div class="section-title">주요 지수</div><table style="width:100%;border-collapse:collapse"><thead><tr><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">종목</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">심볼</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">현재가</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">등락</th></tr></thead><tbody><tr style=""><td style="color:#e8eaf0;font-weight:600">US 30</td><td style="color:#8892b0;font-size:12px">US30</td><td style="color:#e8eaf0;font-weight:700">45,160.9</td><td style="color:#e74c3c;font-weight:600">-0.12%</td></tr><tr style=""><td style="color:#e8eaf0;font-weight:600">US 500</td><td style="color:#8892b0;font-size:12px">US500</td><td style="color:#e8eaf0;font-weight:700">6,331.7</td><td style="color:#e74c3c;font-weight:600">-0.19%</td></tr><tr style=""><td style="color:#e8eaf0;font-weight:600">US Tech 100</td><td style="color:#8892b0;font-size:12px">USTECH</td><td style="color:#e8eaf0;font-weight:700">22,892.1</td><td style="color:#e74c3c;font-weight:600">-0.27%</td></tr><tr style=""><td style="color:#e8eaf0;font-weight:600">US 2000</td><td style="color:#8892b0;font-size:12px">US2000</td><td style="color:#e8eaf0;font-weight:700">2,405.1</td><td style="color:#e74c3c;font-weight:600">-0.37%</td></tr><tr style="background:#22263a;"><td style="color:#e8eaf0;font-weight:600">필라델피아 반도체</td><td style="color:#8892b0;font-size:12px">SOX</td><td style="color:#e8eaf0;font-weight:700">7,142.3</td><td style="color:#e74c3c;font-weight:600">-4.23%</td></tr></tbody></table></div><div style="margin-bottom:20px"><div class="section-title">변동성</div><table style="width:100%;border-collapse:collapse"><thead><tr><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">종목</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">심볼</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">현재가</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">등락</th></tr></thead><tbody><tr style=""><td style="color:#e8eaf0;font-weight:600">S&P 500 VIX (F)</td><td style="color:#8892b0;font-size:12px">VX</td><td style="color:#e8eaf0;font-weight:700">28.58</td><td style="color:#2ecc71;font-weight:600">+0.28%</td></tr></tbody></table></div><div style="margin-bottom:20px"><div class="section-title">국채 금리</div><table style="width:100%;border-collapse:collapse"><thead><tr><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">종목</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">심볼</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">현재가</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">등락</th></tr></thead><tbody><tr style=""><td style="color:#e8eaf0;font-weight:600">미국 2년</td><td style="color:#8892b0;font-size:12px">US2YT=X</td><td style="color:#e8eaf0;font-weight:700">3.838</td><td style="color:#2ecc71;font-weight:600">+0.26%</td></tr><tr style=""><td style="color:#e8eaf0;font-weight:600">미국 10년물 국채 금리</td><td style="color:#8892b0;font-size:12px">US10YT=X</td><td style="color:#e8eaf0;font-weight:700">4.358</td><td style="color:#2ecc71;font-weight:600">+0.37%</td></tr><tr style=""><td style="color:#e8eaf0;font-weight:600">미국 30년</td><td style="color:#8892b0;font-size:12px">US30YT=X</td><td style="color:#e8eaf0;font-weight:700">4.909</td><td style="color:#2ecc71;font-weight:600">+0.06%</td></tr></tbody></table></div><div style="margin-bottom:20px"><div class="section-title">달러 / 환율</div><table style="width:100%;border-collapse:collapse"><thead><tr><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">종목</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">심볼</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">현재가</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">등락</th></tr></thead><tbody><tr style=""><td style="color:#e8eaf0;font-weight:600">미국 달러 지수 (F)</td><td style="color:#8892b0;font-size:12px">DX</td><td style="color:#e8eaf0;font-weight:700">100.37</td><td style="color:#2ecc71;font-weight:600">+0.39%</td></tr><tr style=""><td style="color:#e8eaf0;font-weight:600">엔/원</td><td style="color:#8892b0;font-size:12px"></td><td style="color:#e8eaf0;font-weight:700">9.4910</td><td style="color:#e74c3c;font-weight:600">-0.10%</td></tr><tr style=""><td style="color:#e8eaf0;font-weight:600">달러/엔</td><td style="color:#8892b0;font-size:12px"></td><td style="color:#e8eaf0;font-weight:700">159.84</td><td style="color:#2ecc71;font-weight:600">+0.09%</td></tr><tr style=""><td style="color:#e8eaf0;font-weight:600">유로/달러</td><td style="color:#8892b0;font-size:12px"></td><td style="color:#e8eaf0;font-weight:700">1.1454</td><td style="color:#e74c3c;font-weight:600">-0.07%</td></tr><tr style="background:#22263a;"><td style="color:#e8eaf0;font-weight:600">달러/원</td><td style="color:#8892b0;font-size:12px"></td><td style="color:#e8eaf0;font-weight:700">1,517.13</td><td style="color:#e74c3c;font-weight:600">-0.01%</td></tr><tr style=""><td style="color:#e8eaf0;font-weight:600">달러/중국 위안</td><td style="color:#8892b0;font-size:12px"></td><td style="color:#e8eaf0;font-weight:700">6.9125</td><td style="color:#2ecc71;font-weight:600">+0.00%</td></tr><tr style=""><td style="color:#e8eaf0;font-weight:600">달러/러시아 루블</td><td style="color:#8892b0;font-size:12px"></td><td style="color:#e8eaf0;font-weight:700">81.3826</td><td style="color:#8892b0;font-weight:600">0.00%</td></tr></tbody></table></div><div style="margin-bottom:20px"><div class="section-title">원자재</div><table style="width:100%;border-collapse:collapse"><thead><tr><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">종목</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">심볼</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">현재가</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">등락</th></tr></thead><tbody><tr style="background:#22263a;"><td style="color:#e8eaf0;font-weight:600">금</td><td style="color:#8892b0;font-size:12px">GC</td><td style="color:#e8eaf0;font-weight:700">4,533.30</td><td style="color:#e74c3c;font-weight:600">-0.16%</td></tr><tr style=""><td style="color:#e8eaf0;font-weight:600">니켈</td><td style="color:#8892b0;font-size:12px">NICKEL</td><td style="color:#e8eaf0;font-weight:700">17,233.00</td><td style="color:#2ecc71;font-weight:600">+0.22%</td></tr><tr style=""><td style="color:#e8eaf0;font-weight:600">구리</td><td style="color:#8892b0;font-size:12px">HG</td><td style="color:#e8eaf0;font-weight:700">5.4838</td><td style="color:#e74c3c;font-weight:600">-0.05%</td></tr><tr style=""><td style="color:#e8eaf0;font-weight:600">은</td><td style="color:#8892b0;font-size:12px">SI</td><td style="color:#e8eaf0;font-weight:700">69.908</td><td style="color:#e74c3c;font-weight:600">-0.40%</td></tr><tr style=""><td style="color:#e8eaf0;font-weight:600">알루미늄</td><td style="color:#8892b0;font-size:12px">MAL</td><td style="color:#e8eaf0;font-weight:700">3,431.50</td><td style="color:#2ecc71;font-weight:600">+4.77%</td></tr><tr style=""><td style="color:#e8eaf0;font-weight:600">팔라듐</td><td style="color:#8892b0;font-size:12px">PA</td><td style="color:#e8eaf0;font-weight:700">1,412.75</td><td style="color:#8892b0;font-weight:600">0.00%</td></tr><tr style=""><td style="color:#e8eaf0;font-weight:600">브렌트유</td><td style="color:#8892b0;font-size:12px">LCO</td><td style="color:#e8eaf0;font-weight:700">108.89</td><td style="color:#2ecc71;font-weight:600">+3.39%</td></tr><tr style="background:#22263a;"><td style="color:#e8eaf0;font-weight:600">WTI유</td><td style="color:#8892b0;font-size:12px">CL</td><td style="color:#e8eaf0;font-weight:700">106.35</td><td style="color:#2ecc71;font-weight:600">+1.30%</td></tr><tr style=""><td style="color:#e8eaf0;font-weight:600">천연가스</td><td style="color:#8892b0;font-size:12px">NG</td><td style="color:#e8eaf0;font-weight:700">2.896</td><td style="color:#2ecc71;font-weight:600">+0.45%</td></tr></tbody></table></div><div style="margin-bottom:20px"><div class="section-title">크립토</div><table style="width:100%;border-collapse:collapse"><thead><tr><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">종목</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">심볼</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">현재가</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">등락</th></tr></thead><tbody><tr style=""><td style="color:#e8eaf0;font-weight:600">비트코인</td><td style="color:#8892b0;font-size:12px">BTC/USD</td><td style="color:#e8eaf0;font-weight:700">66,525.1</td><td style="color:#2ecc71;font-weight:600">+0.80%</td></tr></tbody></table></div><div style="margin-bottom:20px"><div class="section-title">한국 관련</div><table style="width:100%;border-collapse:collapse"><thead><tr><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">종목</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">심볼</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">현재가</th><th style="text-align:left;color:#8892b0;font-size:11px;padding:6px 8px;border-bottom:1px solid #2e3350">등락</th></tr></thead><tbody><tr style=""><td style="color:#e8eaf0;font-weight:600">RTSI 지수</td><td style="color:#8892b0;font-size:12px">IRTS</td><td style="color:#e8eaf0;font-weight:700">1,085.27</td><td style="color:#2ecc71;font-weight:600">+0.21%</td></tr><tr style=""><td style="color:#e8eaf0;font-weight:600">Direxion Daily SK Bull 3X Shrs</td><td style="color:#8892b0;font-size:12px">KORU</td><td style="color:#e8eaf0;font-weight:700">243.16</td><td style="color:#e74c3c;font-weight:600">-11.27%</td></tr><tr style=""><td style="color:#e8eaf0;font-weight:600">MSCI South Korea Cap</td><td style="color:#8892b0;font-size:12px">EWY</td><td style="color:#e8eaf0;font-weight:700">116.51</td><td style="color:#e74c3c;font-weight:600">-3.69%</td></tr></tbody></table></div></div></div>
+    <div id="pgtrp" class="tab-panel"><div style="color:#6b7280;padding:32px;text-align:center">레포트 분석 없음</div></div>
+    <div id="pgtyp" class="tab-panel"><div style="color:#6b7280;padding:32px;text-align:center">유튜브 분석 없음</div></div>
+    <div id="pgttp" class="tab-panel"><div style="color:#6b7280;padding:32px;text-align:center">오늘 텔레그램 브리핑 없음</div></div>
+    <div id="pgtmp" class="tab-panel"><div style="padding:8px 0"><div style="font-size:11px;color:#6b7280;margin-bottom:16px">업데이트: 2026-03-31 08:07</div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:8px;padding:16px;margin-bottom:20px"><div style="font-size:11px;font-weight:700;letter-spacing:1px;color:#f59e0b;margin-bottom:10px">RISK ALERT</div><div style="padding:5px 0;color:#f59e0b;font-size:13px">⚠ 고VIX → 변동성 장세, 포지션 축소 고려</div><div style="padding:5px 0;color:#f59e0b;font-size:13px">⚠ 원화 약세(1,517원) → 외국인 수급 부담, 수입물가 상승</div><div style="padding:5px 0;color:#f59e0b;font-size:13px">⚠ 고유가(WTI $106.3) → 인플레 재점화 우려</div></div><div style="background:#13141a;border:1px solid #23242f;border-radius:10px;padding:16px;margin-bottom:20px"><div class="section-title">시황 요약</div><div style="padding:6px 0;border-bottom:1px solid #23242f;font-size:13px;color:#f1f2f6">[변동성] VIX 28.58 → 공포 구간 (높음)</div><div style="padding:6px 0;border-bottom:1px solid #23242f;font-size:13px;color:#f1f2f6">[주요 지수] US 30 45,160.9 (-0.12%) | US 500 6,331.7 (-0.19%) | US Tech 100 22,892.1 (-0.27%) | US 2000 2,405.1 (-0.37%) | 필라델피아 반도체 7,142.3 (-4.23%)</div><div style="padding:6px 0;border-bottom:1px solid #23242f;font-size:13px;color:#f1f2f6">[금리] 2Y 3.838% / 10Y 4.358% → 수익률곡선 정상 (우상향) (스프레드 +0.520%)</div><div style="padding:6px 0;border-bottom:1px solid #23242f;font-size:13px;color:#f1f2f6">[달러지수] DX 100.37 (+0.39%)</div><div style="padding:6px 0;border-bottom:1px solid #23242f;font-size:13px;color:#f1f2f6">[환율] 달러/원 1,517.13 (-0.01%)</div><div style="padding:6px 0;border-bottom:1px solid #23242f;font-size:13px;color:#f1f2f6">[유가] WTI 106.35 (+1.30%)</div><div style="padding:6px 0;border-bottom:1px solid #23242f;font-size:13px;color:#f1f2f6">[금] 4,533.30 (-0.16%)</div></div><div style="margin-bottom:20px"><div class="section-title">주요 지수</div><table style="width:100%;border-collapse:collapse"><thead><tr><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">종목</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">심볼</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">현재가</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">등락</th></tr></thead><tbody><tr style=""><td style="color:#f1f2f6;font-weight:600">US 30</td><td style="color:#6b7280;font-size:12px">US30</td><td style="color:#f1f2f6;font-weight:700">45,160.9</td><td style="color:#ef4444;font-weight:600">-0.12%</td></tr><tr style=""><td style="color:#f1f2f6;font-weight:600">US 500</td><td style="color:#6b7280;font-size:12px">US500</td><td style="color:#f1f2f6;font-weight:700">6,331.7</td><td style="color:#ef4444;font-weight:600">-0.19%</td></tr><tr style=""><td style="color:#f1f2f6;font-weight:600">US Tech 100</td><td style="color:#6b7280;font-size:12px">USTECH</td><td style="color:#f1f2f6;font-weight:700">22,892.1</td><td style="color:#ef4444;font-weight:600">-0.27%</td></tr><tr style=""><td style="color:#f1f2f6;font-weight:600">US 2000</td><td style="color:#6b7280;font-size:12px">US2000</td><td style="color:#f1f2f6;font-weight:700">2,405.1</td><td style="color:#ef4444;font-weight:600">-0.37%</td></tr><tr style="background:#1c1d24;"><td style="color:#f1f2f6;font-weight:600">필라델피아 반도체</td><td style="color:#6b7280;font-size:12px">SOX</td><td style="color:#f1f2f6;font-weight:700">7,142.3</td><td style="color:#ef4444;font-weight:600">-4.23%</td></tr></tbody></table></div><div style="margin-bottom:20px"><div class="section-title">변동성</div><table style="width:100%;border-collapse:collapse"><thead><tr><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">종목</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">심볼</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">현재가</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">등락</th></tr></thead><tbody><tr style=""><td style="color:#f1f2f6;font-weight:600">S&P 500 VIX (F)</td><td style="color:#6b7280;font-size:12px">VX</td><td style="color:#f1f2f6;font-weight:700">28.58</td><td style="color:#22c55e;font-weight:600">+0.28%</td></tr></tbody></table></div><div style="margin-bottom:20px"><div class="section-title">국채 금리</div><table style="width:100%;border-collapse:collapse"><thead><tr><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">종목</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">심볼</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">현재가</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">등락</th></tr></thead><tbody><tr style=""><td style="color:#f1f2f6;font-weight:600">미국 2년</td><td style="color:#6b7280;font-size:12px">US2YT=X</td><td style="color:#f1f2f6;font-weight:700">3.838</td><td style="color:#22c55e;font-weight:600">+0.26%</td></tr><tr style=""><td style="color:#f1f2f6;font-weight:600">미국 10년물 국채 금리</td><td style="color:#6b7280;font-size:12px">US10YT=X</td><td style="color:#f1f2f6;font-weight:700">4.358</td><td style="color:#22c55e;font-weight:600">+0.37%</td></tr><tr style=""><td style="color:#f1f2f6;font-weight:600">미국 30년</td><td style="color:#6b7280;font-size:12px">US30YT=X</td><td style="color:#f1f2f6;font-weight:700">4.909</td><td style="color:#22c55e;font-weight:600">+0.06%</td></tr></tbody></table></div><div style="margin-bottom:20px"><div class="section-title">달러 / 환율</div><table style="width:100%;border-collapse:collapse"><thead><tr><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">종목</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">심볼</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">현재가</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">등락</th></tr></thead><tbody><tr style=""><td style="color:#f1f2f6;font-weight:600">미국 달러 지수 (F)</td><td style="color:#6b7280;font-size:12px">DX</td><td style="color:#f1f2f6;font-weight:700">100.37</td><td style="color:#22c55e;font-weight:600">+0.39%</td></tr><tr style=""><td style="color:#f1f2f6;font-weight:600">엔/원</td><td style="color:#6b7280;font-size:12px"></td><td style="color:#f1f2f6;font-weight:700">9.4910</td><td style="color:#ef4444;font-weight:600">-0.10%</td></tr><tr style=""><td style="color:#f1f2f6;font-weight:600">달러/엔</td><td style="color:#6b7280;font-size:12px"></td><td style="color:#f1f2f6;font-weight:700">159.84</td><td style="color:#22c55e;font-weight:600">+0.09%</td></tr><tr style=""><td style="color:#f1f2f6;font-weight:600">유로/달러</td><td style="color:#6b7280;font-size:12px"></td><td style="color:#f1f2f6;font-weight:700">1.1454</td><td style="color:#ef4444;font-weight:600">-0.07%</td></tr><tr style="background:#1c1d24;"><td style="color:#f1f2f6;font-weight:600">달러/원</td><td style="color:#6b7280;font-size:12px"></td><td style="color:#f1f2f6;font-weight:700">1,517.13</td><td style="color:#ef4444;font-weight:600">-0.01%</td></tr><tr style=""><td style="color:#f1f2f6;font-weight:600">달러/중국 위안</td><td style="color:#6b7280;font-size:12px"></td><td style="color:#f1f2f6;font-weight:700">6.9125</td><td style="color:#22c55e;font-weight:600">+0.00%</td></tr><tr style=""><td style="color:#f1f2f6;font-weight:600">달러/러시아 루블</td><td style="color:#6b7280;font-size:12px"></td><td style="color:#f1f2f6;font-weight:700">81.3826</td><td style="color:#6b7280;font-weight:600">0.00%</td></tr></tbody></table></div><div style="margin-bottom:20px"><div class="section-title">원자재</div><table style="width:100%;border-collapse:collapse"><thead><tr><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">종목</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">심볼</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">현재가</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">등락</th></tr></thead><tbody><tr style="background:#1c1d24;"><td style="color:#f1f2f6;font-weight:600">금</td><td style="color:#6b7280;font-size:12px">GC</td><td style="color:#f1f2f6;font-weight:700">4,533.30</td><td style="color:#ef4444;font-weight:600">-0.16%</td></tr><tr style=""><td style="color:#f1f2f6;font-weight:600">니켈</td><td style="color:#6b7280;font-size:12px">NICKEL</td><td style="color:#f1f2f6;font-weight:700">17,233.00</td><td style="color:#22c55e;font-weight:600">+0.22%</td></tr><tr style=""><td style="color:#f1f2f6;font-weight:600">구리</td><td style="color:#6b7280;font-size:12px">HG</td><td style="color:#f1f2f6;font-weight:700">5.4838</td><td style="color:#ef4444;font-weight:600">-0.05%</td></tr><tr style=""><td style="color:#f1f2f6;font-weight:600">은</td><td style="color:#6b7280;font-size:12px">SI</td><td style="color:#f1f2f6;font-weight:700">69.908</td><td style="color:#ef4444;font-weight:600">-0.40%</td></tr><tr style=""><td style="color:#f1f2f6;font-weight:600">알루미늄</td><td style="color:#6b7280;font-size:12px">MAL</td><td style="color:#f1f2f6;font-weight:700">3,431.50</td><td style="color:#22c55e;font-weight:600">+4.77%</td></tr><tr style=""><td style="color:#f1f2f6;font-weight:600">팔라듐</td><td style="color:#6b7280;font-size:12px">PA</td><td style="color:#f1f2f6;font-weight:700">1,412.75</td><td style="color:#6b7280;font-weight:600">0.00%</td></tr><tr style=""><td style="color:#f1f2f6;font-weight:600">브렌트유</td><td style="color:#6b7280;font-size:12px">LCO</td><td style="color:#f1f2f6;font-weight:700">108.89</td><td style="color:#22c55e;font-weight:600">+3.39%</td></tr><tr style="background:#1c1d24;"><td style="color:#f1f2f6;font-weight:600">WTI유</td><td style="color:#6b7280;font-size:12px">CL</td><td style="color:#f1f2f6;font-weight:700">106.35</td><td style="color:#22c55e;font-weight:600">+1.30%</td></tr><tr style=""><td style="color:#f1f2f6;font-weight:600">천연가스</td><td style="color:#6b7280;font-size:12px">NG</td><td style="color:#f1f2f6;font-weight:700">2.896</td><td style="color:#22c55e;font-weight:600">+0.45%</td></tr></tbody></table></div><div style="margin-bottom:20px"><div class="section-title">크립토</div><table style="width:100%;border-collapse:collapse"><thead><tr><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">종목</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">심볼</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">현재가</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">등락</th></tr></thead><tbody><tr style=""><td style="color:#f1f2f6;font-weight:600">비트코인</td><td style="color:#6b7280;font-size:12px">BTC/USD</td><td style="color:#f1f2f6;font-weight:700">66,525.1</td><td style="color:#22c55e;font-weight:600">+0.80%</td></tr></tbody></table></div><div style="margin-bottom:20px"><div class="section-title">한국 관련</div><table style="width:100%;border-collapse:collapse"><thead><tr><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">종목</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">심볼</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">현재가</th><th style="text-align:left;color:#6b7280;font-size:11px;padding:6px 8px;border-bottom:1px solid #23242f">등락</th></tr></thead><tbody><tr style=""><td style="color:#f1f2f6;font-weight:600">RTSI 지수</td><td style="color:#6b7280;font-size:12px">IRTS</td><td style="color:#f1f2f6;font-weight:700">1,085.27</td><td style="color:#22c55e;font-weight:600">+0.21%</td></tr><tr style=""><td style="color:#f1f2f6;font-weight:600">Direxion Daily SK Bull 3X Shrs</td><td style="color:#6b7280;font-size:12px">KORU</td><td style="color:#f1f2f6;font-weight:700">243.16</td><td style="color:#ef4444;font-weight:600">-11.27%</td></tr><tr style=""><td style="color:#f1f2f6;font-weight:600">MSCI South Korea Cap</td><td style="color:#6b7280;font-size:12px">EWY</td><td style="color:#f1f2f6;font-weight:700">116.51</td><td style="color:#ef4444;font-weight:600">-3.69%</td></tr></tbody></table></div></div></div>
     </div>
-  <div class="sidebar"><div class="sidebar-card"><div class="sidebar-title">📅 아카이브</div><div class="archive-item"><a href="2026-03-31.html" class="archive-date">2026-03-31</a><span class="archive-count">기록 있음</span></div><div class="archive-item"><a href="2026-03-30.html" class="archive-date">2026-03-30</a><span class="archive-count">기록 있음</span></div><div class="archive-item"><a href="2026-03-29.html" class="archive-date">2026-03-29</a><span class="archive-count">기록 있음</span></div></div></div>
+  <div class="sidebar"><div class="sidebar-card"><div class="sidebar-title">📅 아카이브</div><div class="archive-item"><a href="2026-03-31.html" class="archive-date">2026-03-31</a><span class="archive-badge">기록</span></div><div class="archive-item"><a href="2026-03-30.html" class="archive-date">2026-03-30</a><span class="archive-badge">기록</span></div><div class="archive-item"><a href="2026-03-29.html" class="archive-date">2026-03-29</a><span class="archive-badge">기록</span></div></div></div>
 </div>
-<div class="footer">DailyBrief · 2026-03-31 · Generated by Claude Code</div>
+<div class="footer">DailyBrief &nbsp;·&nbsp; 2026-03-31 &nbsp;·&nbsp; Generated by Claude Code</div>
 </body>
 </html>
