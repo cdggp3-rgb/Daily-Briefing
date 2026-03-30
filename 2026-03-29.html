@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>데일리 브리프 | 2026-03-29</title>
+<style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#0f1117;color:#e8eaf0;font-family:'Pretendard','Noto Sans KR',Arial,sans-serif;line-height:1.7;font-size:15px}
+    a{color:#4f8ef7;text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .topbar{background:#1a1d27;border-bottom:1px solid #2e3350;padding:14px 0;position:sticky;top:0;z-index:100}
+    .topbar-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{font-size:18px;font-weight:700;color:#4f8ef7;letter-spacing:-0.5px}
+    .logo span{color:#e8eaf0}
+    .nav-dates{display:flex;gap:8px;flex-wrap:wrap}
+    .nav-dates a{padding:4px 12px;border-radius:20px;font-size:13px;border:1px solid #2e3350;color:#8892b0;transition:all .2s}
+    .nav-dates a:hover,.nav-dates a.active{background:#4f8ef7;color:#fff;border-color:#4f8ef7;text-decoration:none}
+
+    .hero{background:linear-gradient(135deg,#1a1d27 0%,#22263a 100%);border-bottom:1px solid #2e3350;padding:32px 0 24px}
+    .hero-inner{max-width:1100px;margin:0 auto;padding:0 24px}
+    .hero-date{font-size:13px;color:#8892b0;margin-bottom:6px}
+    .hero-title{font-size:26px;font-weight:700;color:#e8eaf0;margin-bottom:8px}
+    .hero-sub{font-size:14px;color:#8892b0}
+    .tags{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+    .tag{padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600}
+    .tag-report{background:#1a3a5c;color:#4f8ef7}
+    .tag-youtube{background:#2a1a3a;color:#7c5cfc}
+    .tag-ai{background:#1a2a1a;color:#2ecc71}
+
+    .main{max-width:1100px;margin:0 auto;padding:32px 24px;display:grid;grid-template-columns:1fr 320px;gap:28px}
+    @media(max-width:900px){.main{grid-template-columns:1fr}}
+
+    .section-title{font-size:11px;font-weight:700;letter-spacing:1.5px;color:#8892b0;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+    .section-title::after{content:'';flex:1;height:1px;background:#2e3350}
+
+    .card{background:#1a1d27;border:1px solid #2e3350;border-radius:12px;padding:22px;margin-bottom:20px;transition:border-color .2s}
+    .card:hover{border-color:#4f8ef7}
+    .card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}
+    .card-title{font-size:17px;font-weight:700;color:#e8eaf0;line-height:1.4}
+    .card-source{font-size:12px;color:#8892b0;margin-top:4px}
+    .card-badge{padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap}
+    .badge-report{background:#1a3a5c;color:#4f8ef7}
+    .badge-youtube{background:#2a1a3a;color:#7c5cfc}
+
+    .macro-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:20px}
+    .macro-item{background:#22263a;border:1px solid #2e3350;border-radius:8px;padding:12px}
+    .macro-key{font-size:11px;color:#8892b0;margin-bottom:4px}
+    .macro-val{font-size:14px;font-weight:600;color:#e8eaf0}
+
+    .block-title{font-size:12px;font-weight:700;color:#8892b0;text-transform:uppercase;letter-spacing:1px;margin:18px 0 8px}
+    ul.dots{list-style:none;padding:0}
+    ul.dots li{padding:5px 0 5px 18px;position:relative;color:#e8eaf0;font-size:14px;border-bottom:1px solid #2e3350}
+    ul.dots li:last-child{border-bottom:none}
+    ul.dots li::before{content:'▸';position:absolute;left:0;color:#4f8ef7;font-size:12px;top:6px}
+
+    .thesis-block{background:#22263a;border-left:3px solid #4f8ef7;border-radius:0 8px 8px 0;padding:14px 16px;margin-bottom:16px}
+    .thesis-author{font-size:12px;color:#4f8ef7;font-weight:700;margin-bottom:4px}
+    .thesis-text{font-size:14px;color:#e8eaf0;line-height:1.6}
+
+    .chain-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:16px}
+    .chain-card{background:#22263a;border:1px solid #2e3350;border-radius:8px;padding:14px}
+    .chain-industry{font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:10px}
+    .chain-label{font-size:11px;font-weight:700;letter-spacing:0.5px;margin:6px 0 3px}
+    .chain-label.green{color:#2ecc71}
+    .chain-label.red{color:#e74c3c}
+    .chain-label.yellow{color:#f39c12}
+    .chain-item{font-size:12px;color:#8892b0;padding:2px 0 2px 10px;border-left:2px solid #2e3350}
+
+    .scenario-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+    @media(max-width:700px){.scenario-cards{grid-template-columns:1fr}}
+    .scenario-card{background:#22263a;border:1px solid #2e3350;border-radius:8px;padding:14px}
+    .scenario-name{font-size:13px;font-weight:700;color:#e8eaf0;margin-bottom:10px}
+    .scenario-label{font-size:11px;font-weight:700;margin:6px 0 3px}
+    .scenario-label.buy{color:#2ecc71}
+    .scenario-label.avoid{color:#e74c3c}
+    .scenario-item{font-size:12px;color:#8892b0;padding:2px 0}
+
+    .insight-list{list-style:none;counter-reset:ins}
+    .insight-list li{counter-increment:ins;padding:10px 0 10px 36px;position:relative;border-bottom:1px solid #2e3350;font-size:14px}
+    .insight-list li:last-child{border-bottom:none}
+    .insight-list li::before{content:counter(ins);position:absolute;left:0;width:24px;height:24px;background:#4f8ef7;color:#fff;border-radius:50%;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;top:10px}
+
+    .risk-table{width:100%;border-collapse:collapse;font-size:13px}
+    .risk-table th{background:#22263a;color:#8892b0;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;text-align:left;border-bottom:1px solid #2e3350}
+    .risk-table td{padding:10px 12px;border-bottom:1px solid #2e3350;vertical-align:top}
+    .risk-table tr:last-child td{border-bottom:none}
+    .risk-name{font-weight:700;color:#e74c3c}
+
+    .yt-card{background:#1a1d27;border:1px solid #2e3350;border-radius:12px;padding:22px;margin-bottom:20px}
+    .yt-meta{font-size:12px;color:#8892b0;margin-bottom:8px}
+    .yt-title{font-size:16px;font-weight:700;color:#e8eaf0;margin-bottom:12px;line-height:1.4}
+    .yt-title a{color:#e8eaf0}
+    .yt-title a:hover{color:#4f8ef7}
+    .yt-summary{font-size:14px;color:#8892b0;background:#22263a;border-radius:8px;padding:12px;margin-bottom:14px;line-height:1.6}
+    .action-items{background:linear-gradient(135deg,#0d2137,#1a1d27);border:1px solid #1a3a5c;border-radius:8px;padding:14px}
+    .action-title{font-size:11px;font-weight:700;color:#4f8ef7;letter-spacing:1px;margin-bottom:10px}
+    .action-item{display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #2e3350;font-size:13px}
+    .action-item:last-child{border-bottom:none}
+    .action-num{width:20px;height:20px;background:#4f8ef7;color:#fff;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+
+    .sidebar{}
+    .sidebar-card{background:#1a1d27;border:1px solid #2e3350;border-radius:12px;padding:18px;margin-bottom:16px}
+    .sidebar-title{font-size:12px;font-weight:700;color:#8892b0;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+    .sidebar-item{padding:8px 0;border-bottom:1px solid #2e3350;font-size:13px;display:flex;justify-content:space-between;align-items:center}
+    .sidebar-item:last-child{border-bottom:none}
+    .sidebar-key{color:#8892b0}
+    .sidebar-val{font-weight:600;color:#e8eaf0}
+    .archive-item{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #2e3350;font-size:13px}
+    .archive-item:last-child{border-bottom:none}
+    .archive-date{color:#4f8ef7}
+    .archive-count{color:#8892b0;font-size:12px}
+
+    .footer{border-top:1px solid #2e3350;padding:24px;text-align:center;font-size:12px;color:#8892b0;margin-top:32px}
+    
+    .tab-radio{display:none}
+    .tab-bar{display:flex;gap:0;border-bottom:2px solid #2e3350;margin-bottom:24px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .tab-btn{padding:11px 22px;font-size:14px;font-weight:600;color:#8892b0;background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;display:flex;align-items:center;gap:7px;user-select:none;-webkit-user-select:none;white-space:nowrap}
+    .tab-btn:hover{color:#e8eaf0}
+    .tab-badge{background:#22263a;color:#8892b0;border-radius:10px;font-size:11px;padding:1px 7px;font-weight:700}
+    .tab-panel{display:none}
+    
+    #pgtr:checked~.pgtbar label[for="pgtr"],
+    #pgty:checked~.pgtbar label[for="pgty"],
+    #pgtt:checked~.pgtbar label[for="pgtt"]{color:#4f8ef7;border-bottom:2px solid #4f8ef7;margin-bottom:-2px}
+    #pgtr:checked~.pgtbar label[for="pgtr"] .tab-badge,
+    #pgty:checked~.pgtbar label[for="pgty"] .tab-badge,
+    #pgtt:checked~.pgtbar label[for="pgtt"] .tab-badge{background:#4f8ef7;color:#fff}
+    #pgtr:checked~#pgtrp,#pgty:checked~#pgtyp,#pgtt:checked~#pgttp{display:block}
+    </style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="logo">Daily<span>Brief</span></div>
+    <div class="nav-dates"><a href="2026-03-30.html" class="">03-30</a><a href="2026-03-29.html" class="active">03-29</a><a href="index.html" style="font-size:12px">전체 →</a></div>
+  </div>
+</div>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-date">2026년 03월 29일</div>
+    <div class="hero-title">투자 리서치 · 시황 분석 · AI 인사이트</div>
+    <div class="hero-sub">레포트 + 유튜브 분석을 통합한 데일리 브리프</div>
+    <div class="tags"><span class="tag tag-report">레포트 1건</span><span class="tag tag-youtube">유튜브 2건</span><span class="tag" style="background:#1a2a1a;color:#2ecc71">텔레그램 1회</span></div>
+  </div>
+</div>
+<div class="main">
+  <div class="content">
+    <input type="radio" class="tab-radio" name="pgtabs" id="pgtr" checked>
+    <input type="radio" class="tab-radio" name="pgtabs" id="pgty">
+    <input type="radio" class="tab-radio" name="pgtabs" id="pgtt">
+    <div class="pgtbar tab-bar">
+        <label for="pgtr" class="tab-btn">📊 레포트 분석 <span class="tab-badge">1</span></label>
+        <label for="pgty" class="tab-btn">🎬 유튜브 분석 <span class="tab-badge">2</span></label>
+        <label for="pgtt" class="tab-btn">📡 텔레그램 브리핑 <span class="tab-badge">1</span></label>
+    </div>
+    <div id="pgtrp" class="tab-panel"><div class="card">
+    <div class="card-header">
+        <div>
+            <div class="card-title">4월 주식시장 전략 + 에너지·화학 Weekly</div>
+            <div class="card-source">하나증권 이재만 / 윤재성</div>
+        </div>
+        <span class="card-badge badge-report">레포트</span>
+    </div><div class="block-title">매크로 환경</div><div class="macro-grid"><div class="macro-item"><div class="macro-key">WTI</div><div class="macro-val">99.64$/bbl (WoW +1.3%)</div></div><div class="macro-item"><div class="macro-key">Dubai</div><div class="macro-val">122.14$/bbl (역대급 스프레드)</div></div><div class="macro-item"><div class="macro-key">정제마진</div><div class="macro-val">39.1$/bbl — 역대 최대치</div></div><div class="macro-item"><div class="macro-key">미국 10년물 금리</div><div class="macro-val">4.3~4.4%</div></div><div class="macro-item"><div class="macro-key">달러인덱스</div><div class="macro-val">100p</div></div><div class="macro-item"><div class="macro-key">VKOSPI</div><div class="macro-val">80p (2008 금융위기 수준)</div></div><div class="macro-item"><div class="macro-key">코스피 12M Fwd PER</div><div class="macro-val">8.2배 (역대 최저권)</div></div><div class="macro-item"><div class="macro-key">지정학</div><div class="macro-val">미국-이란 전쟁 / 호르무즈 부분 봉쇄</div></div></div><div class="block-title">방향성 판단</div><ul class="dots"><li>핵심 변수: ① 달러인덱스 방향 ② 미국 Tech CAPEX 사이클</li><li>연준 금리인상 가능성 낮음 — 사모대출 리스크 + 과거 전쟁 시 인하 경험</li><li>전쟁 지속 시: 유가↑ → 물가↑ → 달러↑ → 금리인하 지연</li><li>AI CAPEX 구조 훼손 없음 — 반도체 수출 동반 상승 지속</li></ul><div class="block-title">핵심 Thesis</div><div class="thesis-block">
+        <div class="thesis-author">이재만 — 4월 주식시장 전망과 전략</div>
+        <div class="thesis-text">전쟁 쇼크로 극단적 공포 국면 진입했으나 기업 이익 훼손 없다면 저가매수 기회. 달러와 기대인플레 방향이 섹터 로테이션을 결정한다.</div>
+        </div>
+        <ul class="dots"><li>AAII Bear/Bull 1.7배, NAAIM 60p → 과거 저점 패턴 일치. 공포가 극단화될수록 반등 가능성↑</li><li>반도체 PER 40배→19배 급락, 소프트웨어(21배)보다 낮아짐 → 밸류에이션 매력 최고조</li><li>삼성/하이닉스 영업이익률 정점 2027년 상반기 → 지금은 빅사이클 중반, 저가매수 구간</li><li>코스피 조정 패턴: 최대 -12%, 평균 -5%, 기간 1~3개월 → 지금이 그 구간</li></ul><div class="thesis-block">
+        <div class="thesis-author">윤재성 — 에너지·화학 Weekly (03.30)</div>
+        <div class="thesis-text">이란 전쟁 장기화 기본 시나리오. 호르무즈 해협 개방 현실적으로 어렵고, 4월 중순 원료 부족 시작. 현 시점 추천종목 없음.</div>
+        </div>
+        <ul class="dots"><li>CERAWeek 2026: 전문가 전원 장기화 전망. 호르무즈 개방에 8~9개월 소요 예상</li><li>나프타 수출제한 시행(3/27) — 국내 납사 크래커 4월 중순 가동률 하락</li><li>아세톤+17%, BD+12%, 프로필렌+9% vs BPA-9%, ECH-5% — 패닉바잉과 실수요 혼재</li><li>미국 원유·정유·가스 밸류체인만 유리</li></ul><div class="block-title">밸류체인 임팩트</div><div class="chain-grid"><div class="chain-card"><div class="chain-industry">에너지(정유)</div><div class="chain-label green">수혜</div><div class="chain-item">정제마진 역대 최대 — S-OIL, 미국 E&P 수혜</div><div class="chain-item">미국 원유·가스 밸류체인 초과 수익</div><div class="chain-label red">피해</div><div class="chain-item">중동산 원유 의존 아시아 정유사 원료 진통</div><div class="chain-label yellow">Watch</div><div class="chain-item">호르무즈 통항 재개 여부</div><div class="chain-item">비축유 방출 규모</div></div><div class="chain-card"><div class="chain-industry">석유화학</div><div class="chain-label green">수혜</div><div class="chain-item">패닉바잉 — 아세톤·BD·프로필렌 단기 급등</div><div class="chain-label red">피해</div><div class="chain-item">국내 납사 크래커 4월 중순 가동률 하락</div><div class="chain-item">BPA·ECH·TDI 역마진</div><div class="chain-label yellow">Watch</div><div class="chain-item">국내 크래커 가동률</div><div class="chain-item">에틸렌 현물가</div></div><div class="chain-card"><div class="chain-industry">반도체/AI</div><div class="chain-label green">수혜</div><div class="chain-item">AI CAPEX 구조 유지</div><div class="chain-item">PER 소프트웨어 하회 → 저가매수</div><div class="chain-label red">피해</div><div class="chain-item">달러 강세 → 외국인 수급 부담</div><div class="chain-label yellow">Watch</div><div class="chain-item">삼성·하이닉스 이익률 추이</div><div class="chain-item">소부장 레벨업 종목</div></div><div class="chain-card"><div class="chain-industry">방산/지주</div><div class="chain-label green">수혜</div><div class="chain-item">전쟁 지속 시나리오에서 코스피 방산·지주 상대 강세</div><div class="chain-label red">피해</div><div class="chain-item">종전 시 전쟁 프리미엄 급소멸</div><div class="chain-label yellow">Watch</div><div class="chain-item">미-이란 협상 진전</div></div></div><div class="block-title">투자 포지셔닝</div><div class="scenario-cards"><div class="scenario-card"><div class="scenario-name">전쟁 지속 (기본)</div><div class="scenario-label buy">비중 확대</div><div class="scenario-item">+ 미국 에너지·은행</div><div class="scenario-item">+ 코스피 방산·은행·지주</div><div class="scenario-item">+ 반도체 분할 적립</div><div class="scenario-label avoid">회피</div><div class="scenario-item">- 국내 납사 크래커</div><div class="scenario-item">- 항공</div><div class="scenario-item">- 중동 의존 건설</div></div><div class="scenario-card"><div class="scenario-name">종전·휴전 전환</div><div class="scenario-label buy">비중 확대</div><div class="scenario-item">+ 반도체 대형주</div><div class="scenario-item">+ 코스피 기계·증권·제약바이오</div><div class="scenario-item">+ S&P 유틸·소프트웨어</div><div class="scenario-label avoid">회피</div><div class="scenario-item">- 에너지·방산 (전쟁 프리미엄 소멸)</div></div></div><div class="block-title">종합 인사이트</div><ol class="insight-list"><li>극단적 공포 국면은 과거 패턴상 매수 신호 — 단 트리거 확인 전 전량 진입 위험</li><li>반도체가 지금 가장 싸다 — PER이 소프트웨어보다 낮아진 건 이례적. 분할 매수 구간</li><li>달러인덱스 100p가 저항선 — 달러 꺾이면 외국인 수급 급개선 가능</li><li>석유화학은 패닉바잉 노이즈 제거 후 판단 필요 — 납사 정상화까지 8~9개월</li><li>미국 원유·가스 밸류체인이 유일한 안전지대</li></ol><div class="block-title">리스크 시나리오</div><table class="risk-table"><thead><tr><th>시나리오</th><th>트리거</th><th>대응</th></tr></thead><tbody><tr><td><span class="risk-name">극적 종전·휴전</span></td><td>미-이란 협상 타결</td><td>에너지·방산 즉시 축소 / 반도체·바이오 확대</td></tr><tr><td><span class="risk-name">연준 금리인상</span></td><td>유가 2개월 지속 → 물가 현실화</td><td>성장주 전면 축소 / 에너지·금융 방어</td></tr><tr><td><span class="risk-name">확전</span></td><td>이란→사우디·UAE 타격</td><td>현금 확대 / 금·미국 에너지만 잔류</td></tr><tr><td><span class="risk-name">중국 급랭</span></td><td>전쟁 장기화로 중국 수입 급감</td><td>중국 수출 의존 화학·소재 전면 축소</td></tr></tbody></table></div></div>
+    <div id="pgtyp" class="tab-panel"><div class="yt-card">
+    <div class="yt-meta">🤖 AI/기술 · Close AI Club</div>
+    <div class="yt-title"><a href="https://youtu.be/8uq62DjQWIU" target="_blank">"스킬 체인지" 마스터하는 엔지니어 AI 마스터클래스 (스킬 + 에이전트 팀)</a></div>
+    <div class="yt-summary">AI를 인턴처럼 쓰는 구조(만들어줘/고쳐줘)에서 기준서를 가진 전문가 팀으로 업그레이드하는 방법. 스킬(기준서)을 만들고 에이전트 팀으로 묶으면 같은 AI·같은 모델도 완전히 다른 결과를 낸다.</div><div class="block-title">주요 포인트</div><ul class="dots"><li>전문가 스킬 = 기준서: 분야 권위 기준 + 숫자 검증 기준 + 사람 눈 체크리스트 + 안티패턴 목록</li><li>앞테클(작업 전 목표 확인) + 백테클(작업 후 자기 검증) 루프 추가 시 자율적으로 품질 관리</li><li>Agent Teams 실험 기능: 디자인 전문가 + 마케팅 전문가가 독립 세션에서 작업 후 서로 크로스체크</li></ul><div class="block-title">적용 가능성</div><ul class="dots"><li>지금 Claude Code + Telegram 구조에 스킬만 추가하면 주식 분석 전문가 바로 적용 가능</li><li>밸류체인 분석 기준서 → 스킬로 만들면 레포트마다 일관된 분석 프레임 자동 적용</li><li>에이전트 팀: 매크로 전문가 + 종목 전문가 + 리스크 전문가 팀 구성 가능</li></ul><div class="action-items"><div class="action-title">⚡ 액션 아이템</div><div class="action-item"><span class="action-num">1</span><span>주식 분석 전문가 스킬 생성 — 밸류체인·포지셔닝 기준서 내장</span></div><div class="action-item"><span class="action-num">2</span><span>영상 설명 링크에서 스킬 파일 다운로드 후 적용</span></div></div></div><div class="yt-card">
+    <div class="yt-meta">🤖 AI/기술 · Jay Choi | 인디해커 라이프</div>
+    <div class="yt-title"><a href="https://youtu.be/ptMI4kRjfX8" target="_blank">클로드는 오픈클로를 대체할 수 있을까? | 클로드 채널 활용까지</a></div>
+    <div class="yt-summary">Anthropic이 오픈클로(OpenClo)에 대응하며 Claude Code에 원격제어·채널·디스패치 기능을 빠르게 추가 중. 코드 작업 위주 개발자에겐 Claude가 더 저렴하고 안전하지만, 능동적 자동화(크론잡·상시 실행)는 아직 오픈클로가 우위.</div><div class="block-title">주요 포인트</div><ul class="dots"><li>오픈클로: 항상 켜진 구조, 크론잡으로 능동적 실행, 50개 이상 채널 지원</li><li>Claude Channels: MCP 기반 → 텔레그램·디스코드·커스텀 채널 연결 가능</li><li>가격: Claude Max $100/월로 API 비용 포함 올인 vs 오픈클로 무료+API 별도</li></ul><div class="block-title">적용 가능성</div><ul class="dots"><li>지금 이미 Claude Code + Telegram 연동해서 쓰고 있는 게 이 영상의 '채널' 구조 그대로</li><li>MCP 기반이라 커스텀 채널 직접 만들 수 있음 → 카카오 알림봇 등 확장 가능</li><li>Dispatch 활성화 시 모바일에서 터미널 없이 분석 지시 가능</li></ul><div class="action-items"><div class="action-title">⚡ 액션 아이템</div><div class="action-item"><span class="action-num">1</span><span>/schedule 세팅 — 매일 아침 자동으로 레포트 분석 실행</span></div><div class="action-item"><span class="action-num">2</span><span>Dispatch 활성화 — 모바일 앱에서 클릭 한 번으로 분석 지시</span></div><div class="action-item"><span class="action-num">3</span><span>커스텀 채널 탐색 — 특정 Telegram 채널 메시지 → Claude 자동 반응 트리거</span></div></div></div></div>
+    <div id="pgttp" class="tab-panel"><style>
+    .pgtgradio{display:none}
+    .pgtgbar{display:flex;gap:0;border-bottom:2px solid #2e3350;margin-bottom:20px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .pgtgtab{padding:10px 18px;font-size:13px;font-weight:600;color:#8892b0;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;user-select:none;-webkit-user-select:none;display:flex;align-items:center;gap:6px}
+    .pgtgtab:hover{color:#e8eaf0}
+    .pgtgpanel{display:none}
+    #pgtgs0:checked~#pgtgp0{display:block}
+    #pgtgs0:checked~.pgtgbar label[for="pgtgs0"]{color:#4f8ef7;border-bottom:2px solid #4f8ef7;margin-bottom:-2px}
+    </style>
+<div>
+<input type="radio" class="pgtgradio" name="pgtgr" id="pgtgs0" checked>
+<div class="pgtgbar"><label for="pgtgs0" class="pgtgtab"><span style="width:8px;height:8px;border-radius:50%;background:#7c5cfc;display:inline-block"></span>저녁 22:10</label></div>
+<div id="pgtgp0" class="pgtgpanel"><div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="background:#7c5cfc;color:#fff;padding:3px 12px;border-radius:20px;font-size:12px;font-weight:700">저녁 22:10</span><span style="font-size:12px;color:#8892b0">최근 8시간</span></div><div style="margin-bottom:20px"><div class="section-title">📡 시황/매크로</div><div class="block-title">핵심 이슈</div><ul class="dots"><li>파키스탄 주최 이란 협상: 터키·이집트·사우디 참여, 호르무즈 해협 해운 재개 초기 논의 — 협상 난항 지속</li><li>후티 반군 이스라엘 미사일 발사 공식화 — 홍해·바브엘만데브 해협 봉쇄 위협 확대, 다중전선 충돌 가능성</li><li>미국 토마호크 미사일 소모율: 연간 구매량의 9배(850발+) 발사 — 전쟁 장기화 시 재고 부족 현실화 우려</li><li>트럼프 트루스소셜 의문의 포스트 (이스라엘-하마스 휴전 관련) — 종전 시나리오 시장 기대 선반영 가능성 모니터링 필요</li></ul><div class="block-title">투자 시사점</div><ul class="dots"><li>협상 시작 ≠ 종전. 호르무즈 초기 논의 수준, 전쟁 프리미엄 완전 해소까지는 시간 필요</li><li>토마호크 소모율 이슈 → 미국 방산 재고 증산 필요성 → 레이시온(RTX) 등 미국 방산 수혜 지속</li><li>후티 확전 → 홍해 봉쇄 강화 → 해운·물류비 추가 급등 리스크</li></ul><div style="font-size:12px;color:#8892b0;margin-top:8px">주목: 미국 주식 인사이더 · 급등일보 · 요약하는 고잉</div></div><div style="margin-bottom:20px"><div class="section-title">📊 종목/산업 분석</div><div class="block-title">핵심 이슈</div><ul class="dots"><li>TSMC 2028년까지 2나노 공정 사실상 완판 → 삼성전자 파운드리 기회 부각, 대만 경제일보 보도</li><li>삼성전자 2028년 실리콘 포토닉스 양산 계획 — 광반도체로 데이터 병목 해결, AI 반도체 차세대 경쟁력</li><li>DDR5 현물가 하락 (커세어 32GB 기준) — BofA 사이먼 우: 현물 20~40달러로 ASP(10달러) 대비 여전히 고평가</li><li>하나증권 반도체(Overweight): TurboQuant 수요 우려 있으나 트렌드포스 1Q/2Q 메모리 가격 상향 — 펀더멘털 견고</li><li>유니트리 CEO: 휴머노이드 로봇 ChatGPT 모먼트 2~3년 내 도래 — 올해 상업화 가속</li><li>한국 보안SW 갈라파고스 탈피: 설치형 보안SW 단계적 제한 → 클라우드·제로트러스트 보안 전환 수혜</li></ul><div class="block-title">투자 시사점</div><ul class="dots"><li>TSMC 완판 → 삼성 파운드리 반사 수혜 기대. 단 삼성 수율 이슈 해결 여부가 관건</li><li>DRAM 현물가 하락은 단기 노이즈 — ASP 여전히 구조적 고점권. 하나증권 Overweight 유지</li><li>휴머노이드 로봇 ChatGPT 모먼트 2~3년 → 선행 투자 관점에서 로봇 소부장/센서 업체 주목</li><li>한국 보안SW 탈규제 → 제로트러스트/클라우드 보안 업체(파수, SGA솔루션즈 등) 중장기 수혜 가능</li></ul><div style="font-size:12px;color:#8892b0;margin-top:8px">주목: 정보수집가 · 선진짱 주식공부방 · 딘스티커 · 루팡 · 레포트 자료수집</div></div><div style="margin-bottom:20px"><div class="section-title">🤖 AI/기술</div><div class="block-title">핵심 이슈</div><ul class="dots"><li>프리라이프: AI 개발보다 활용이 더 중요 — 한국은 AI 적용 산업이 많아 활용 집중 전략 유효</li><li>스웨덴 Lovable 사례: 2023년 창업, 2026년 2월 ARR 급성장 — 파운데이션 모델 직접 개발 아닌 활용 스택으로 성공</li><li>AI 감시 이슈: 기술 발전이 노동자 업무 강도를 높이는 부작용 — 노동 생산성 vs 통제 논란</li><li>데이터센터 전력소모량 증가 가속 — 전력/에너지 인프라 투자 수요 지속</li></ul><div class="block-title">투자 시사점</div><ul class="dots"><li>Lovable 모델 시사점: 자체 모델 개발보다 활용 레이어 (코드 생성, 자동화) 스타트업이 빠른 성장 → 국내 AI 앱/SaaS 투자 관점</li><li>데이터센터 전력 수요 증가 → 전력 인프라(변압기, 케이블, 발전) 수혜 구조 지속</li></ul><div style="font-size:12px;color:#8892b0;margin-top:8px">주목: 프리라이프 · 서화백의 그림놀이 · AI MASTERS</div></div><div style="margin-bottom:20px"><div class="section-title">🛡️ 방산/우주</div><div class="block-title">핵심 이슈</div><ul class="dots"><li>UAE 천궁2 3번째 포대 장비 중동 도착, 이르면 4월 초 실전 운용 — 이란의 미사일 공격에 방어 성능 입증</li></ul><div class="block-title">투자 시사점</div><ul class="dots"><li>천궁2 실전 검증 → LIG넥스원 등 K-방산 수출 모멘텀 강화. 추가 수출 계약 기대감 유효</li></ul><div style="font-size:12px;color:#8892b0;margin-top:8px">주목: 우주방산AI로봇 아카이브</div></div></div>
+</div></div>
+    </div>
+  <div class="sidebar"><div class="sidebar-card"><div class="sidebar-title">매크로 스냅샷</div><div class="sidebar-item"><span class="sidebar-key">WTI</span><span class="sidebar-val">99.64$/bbl (WoW +1.3</span></div><div class="sidebar-item"><span class="sidebar-key">Dubai</span><span class="sidebar-val">122.14$/bbl (역대급 스프레</span></div><div class="sidebar-item"><span class="sidebar-key">정제마진</span><span class="sidebar-val">39.1$/bbl — 역대 최대치</span></div><div class="sidebar-item"><span class="sidebar-key">미국 10년물 금리</span><span class="sidebar-val">4.3~4.4%</span></div><div class="sidebar-item"><span class="sidebar-key">달러인덱스</span><span class="sidebar-val">100p</span></div><div class="sidebar-item"><span class="sidebar-key">VKOSPI</span><span class="sidebar-val">80p (2008 금융위기 수준)</span></div></div><div class="sidebar-card"><div class="sidebar-title">📅 아카이브</div><div class="archive-item"><a href="2026-03-30.html" class="archive-date">2026-03-30</a><span class="archive-count">기록 있음</span></div><div class="archive-item"><a href="2026-03-29.html" class="archive-date">2026-03-29</a><span class="archive-count">기록 있음</span></div></div></div>
+</div>
+<div class="footer">DailyBrief · 2026-03-29 · Generated by Claude Code</div>
+</body>
+</html>
