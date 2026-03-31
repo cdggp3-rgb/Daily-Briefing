@@ -46,17 +46,16 @@
     /* ── 시황 티커바 ── */
     .ticker-wrap{max-width:960px;margin:0 auto;padding:0 24px}
     @media(max-width:960px){.ticker-wrap{padding:0 16px}}
-    .ticker-bar{display:flex;gap:8px;overflow-x:auto;padding:16px 0 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-    .ticker-bar::-webkit-scrollbar{display:none}
-    .ticker-item{flex:0 0 auto;background:#13141a;border:1px solid #23242f;border-radius:10px;padding:10px 16px;min-width:100px;transition:border-color .2s,box-shadow .2s;cursor:default}
+    .ticker-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px;padding:16px 0 12px}
+    .ticker-item{background:#13141a;border:1px solid #23242f;border-radius:10px;padding:10px 14px;transition:border-color .2s,box-shadow .2s;cursor:default;min-width:0}
     .ticker-item:hover{border-color:rgba(59,130,246,0.4);box-shadow:0 0 0 1px rgba(59,130,246,0.08)}
-    .ticker-label{font-size:10px;color:#6b7280;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:4px;white-space:nowrap}
-    .ticker-price{font-size:14px;font-weight:700;color:#f1f2f6;margin-bottom:2px;white-space:nowrap}
+    .ticker-label{font-size:10px;color:#6b7280;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .ticker-price{font-size:13px;font-weight:700;color:#f1f2f6;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .ticker-chg{font-size:11px;font-weight:600;white-space:nowrap}
     .ticker-up{color:#22c55e}
     .ticker-down{color:#ef4444}
     .ticker-flat{color:#6b7280}
-    .ticker-divider{flex:0 0 1px;background:#23242f;align-self:stretch;margin:0 4px}
+    .ticker-updated{font-size:10px;color:#6b7280;margin-top:4px;text-align:right}
 
     /* ── 섹션 타이틀 ── */
     .section-title{font-size:10px;font-weight:700;letter-spacing:2px;color:#6b7280;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
