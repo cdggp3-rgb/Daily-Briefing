@@ -224,6 +224,7 @@
     #d20260329tv:checked~.d20260329tbar label[for="d20260329tv"] .tab-badge{background:#3b82f6;color:#fff}
     #d20260329tr:checked~#d20260329trp,#d20260329ty:checked~#d20260329typ,#d20260329tt:checked~#d20260329ttp,#d20260329tp:checked~#d20260329tpp,#d20260329tu:checked~#d20260329tup,#d20260329tv:checked~#d20260329tvp{display:block}
     </style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
 <div class="topbar">
@@ -249,14 +250,14 @@
   <div class="signal-header">
     <span class="signal-title">시장 신호</span>
     <div style="display:flex;align-items:center;gap:10px">
-      <span class="signal-meta">2026-03-31 22:32 기준</span>
+      <span class="signal-meta">2026-03-31 22:33 기준</span>
       <span class="signal-overall red"><span class="sig-dot red"></span>위험</span>
     </div>
   </div>
-  <div class="signal-grid"><div class="sig-card red"><div class="sig-name">변동성</div><div class="sig-value">VIX 26.73</div><div class="sig-sub red">공포 구간</div></div><div class="sig-card green"><div class="sig-name">S&P500</div><div class="sig-value">6,412.6</div><div class="sig-sub green">▲ +1.08%</div></div><div class="sig-card green"><div class="sig-name">NASDAQ</div><div class="sig-value">23,252.2</div><div class="sig-sub green">▲ +1.30%</div></div><div class="sig-card green"><div class="sig-name">미국 금리</div><div class="sig-value">2Y 3.779 / 10Y 4.309</div><div class="sig-sub green">정상 +0.53%</div></div><div class="sig-card red"><div class="sig-name">USD/KRW</div><div class="sig-value">₩1,525.66</div><div class="sig-sub red">원화 약세</div></div><div class="sig-card red"><div class="sig-name">WTI 유가</div><div class="sig-value">$103.68</div><div class="sig-sub red">고유가 +0.78%</div></div></div>
+  <div class="signal-grid"><div class="sig-card red"><div class="sig-name">변동성</div><div class="sig-value">VIX 26.72</div><div class="sig-sub red">공포 구간</div></div><div class="sig-card green"><div class="sig-name">S&P500</div><div class="sig-value">6,409.1</div><div class="sig-sub green">▲ +1.03%</div></div><div class="sig-card green"><div class="sig-name">NASDAQ</div><div class="sig-value">23,209.2</div><div class="sig-sub green">▲ +1.11%</div></div><div class="sig-card green"><div class="sig-name">미국 금리</div><div class="sig-value">2Y 3.779 / 10Y 4.307</div><div class="sig-sub green">정상 +0.53%</div></div><div class="sig-card red"><div class="sig-name">USD/KRW</div><div class="sig-value">₩1,525.64</div><div class="sig-sub red">원화 약세</div></div><div class="sig-card red"><div class="sig-name">WTI 유가</div><div class="sig-value">$103.60</div><div class="sig-sub red">고유가 +0.70%</div></div></div>
   <div class="signal-divider">추가 지표</div>
-  <div class="signal-grid"><div class="sig-card green"><div class="sig-name">다우</div><div class="sig-value">45,589.3</div><div class="sig-sub green">▲ +0.82%</div></div><div class="sig-card green"><div class="sig-name">필라델피아 SOX</div><div class="sig-value">7,283.3</div><div class="sig-sub green">▲ +1.97%</div></div><div class="sig-card green"><div class="sig-name">달러지수 DXY</div><div class="sig-value">99.975</div><div class="sig-sub green">▼ -0.38%</div></div><div class="sig-card red"><div class="sig-name">USD/JPY</div><div class="sig-value">159.32</div><div class="sig-sub red">엔 약세 -0.23%</div></div><div class="sig-card yellow"><div class="sig-name">금</div><div class="sig-value">4,600.00</div><div class="sig-sub yellow">▲ +0.93%</div></div><div class="sig-card yellow"><div class="sig-name">비트코인</div><div class="sig-value">66,869.6</div><div class="sig-sub yellow">▼ -0.93%</div></div></div>
-  <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;padding-top:10px;border-top:1px solid #23242f"><span style="font-size:11px;color:#f59e0b">⚠ 고VIX → 변동성 장세, 포지션 축소 고려</span><span style="font-size:11px;color:#f59e0b">⚠ 원화 약세(1,526원) → 외국인 수급 부담, 수입물가 상승</span><span style="font-size:11px;color:#f59e0b">⚠ 고유가(WTI $103.7) → 인플레 재점화 우려</span></div>
+  <div class="signal-grid"><div class="sig-card green"><div class="sig-name">다우</div><div class="sig-value">45,605.8</div><div class="sig-sub green">▲ +0.86%</div></div><div class="sig-card green"><div class="sig-name">필라델피아 SOX</div><div class="sig-value">7,290.4</div><div class="sig-sub green">▲ +2.07%</div></div><div class="sig-card green"><div class="sig-name">달러지수 DXY</div><div class="sig-value">99.972</div><div class="sig-sub green">▼ -0.38%</div></div><div class="sig-card red"><div class="sig-name">USD/JPY</div><div class="sig-value">159.29</div><div class="sig-sub red">엔 약세 -0.25%</div></div><div class="sig-card yellow"><div class="sig-name">금</div><div class="sig-value">4,600.92</div><div class="sig-sub yellow">▲ +0.95%</div></div><div class="sig-card yellow"><div class="sig-name">비트코인</div><div class="sig-value">66,805.0</div><div class="sig-sub yellow">▼ -1.03%</div></div></div>
+  <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;padding-top:10px;border-top:1px solid #23242f"><span style="font-size:11px;color:#f59e0b">⚠ 고VIX → 변동성 장세, 포지션 축소 고려</span><span style="font-size:11px;color:#f59e0b">⚠ 원화 약세(1,526원) → 외국인 수급 부담, 수입물가 상승</span><span style="font-size:11px;color:#f59e0b">⚠ 고유가(WTI $103.6) → 인플레 재점화 우려</span></div>
 </div></div>
     <input type="radio" class="tab-radio" name="d20260331tabs" id="d20260331tr" checked>
     <input type="radio" class="tab-radio" name="d20260331tabs" id="d20260331ty">
@@ -409,7 +410,77 @@
             </div>
             <div style="font-size:12px;color:#9ca3af;line-height:1.6">RS Strong 근접. 전력망 AI 수혜 추세 살아있음. 52주 고가 근접 확인 후 진입</div>
           </div>
-        </div></div><div style="margin-top:8px;padding:10px 12px;background:#1c1d24;border-radius:6px;font-size:12px;color:#9ca3af">💬 현재 52주 신고가 조건 충족 종목 없음 — 시장 전반 조정 구간</div><div style="margin-top:8px;padding:10px 12px;background:#1c1d24;border-radius:6px;font-size:12px;color:#9ca3af">💬 손절 -8% 기준 리스크 관리 필수</div><div style="margin-top:8px;padding:10px 12px;background:#1c1d24;border-radius:6px;font-size:12px;color:#9ca3af">💬 추세 회복 + 신고가 돌파 시 진입 — 급하게 사지 말 것</div><div style="display:flex;align-items:center;gap:10px;margin:24px 0 14px"><span style="font-size:16px">📈</span><span style="font-size:13px;font-weight:700;color:#f1f2f6;letter-spacing:-0.2px">시장 데이터</span><span style="flex:1;height:1px;background:#23242f"></span></div><div style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:#6b7280;text-transform:uppercase;margin-bottom:8px">섹터 RS 순위</div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-bottom:16px"><div style="background:#1c1d24;border:1px solid #23242f;border-radius:8px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="font-size:13px;font-weight:600;color:#f1f2f6">반도체</span><div style="display:flex;gap:6px;align-items:center"><span style="font-size:10px;font-weight:700;background:rgba(245,158,11,0.1);color:#f59e0b;border-radius:4px;padding:2px 6px">RS 67.8</span><span style="font-size:11px;color:#22c55e;font-weight:600">+32.7%</span></div></div><div style="background:#1c1d24;border:1px solid #23242f;border-radius:8px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="font-size:13px;font-weight:600;color:#f1f2f6">2차전지</span><div style="display:flex;gap:6px;align-items:center"><span style="font-size:10px;font-weight:700;background:rgba(245,158,11,0.1);color:#f59e0b;border-radius:4px;padding:2px 6px">RS 55.3</span><span style="font-size:11px;color:#22c55e;font-weight:600">+22.3%</span></div></div><div style="background:#1c1d24;border:1px solid #23242f;border-radius:8px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="font-size:13px;font-weight:600;color:#f1f2f6">자동차</span><div style="display:flex;gap:6px;align-items:center"><span style="font-size:10px;font-weight:700;background:rgba(245,158,11,0.1);color:#f59e0b;border-radius:4px;padding:2px 6px">RS 50.2</span><span style="font-size:11px;color:#22c55e;font-weight:600">+16.2%</span></div></div><div style="background:#1c1d24;border:1px solid #23242f;border-radius:8px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="font-size:13px;font-weight:600;color:#f1f2f6">광통신/네트워크</span><div style="display:flex;gap:6px;align-items:center"><span style="font-size:10px;font-weight:700;background:rgba(245,158,11,0.1);color:#f59e0b;border-radius:4px;padding:2px 6px">RS 48.6</span><span style="font-size:11px;color:#22c55e;font-weight:600">+15.8%</span></div></div><div style="background:#1c1d24;border:1px solid #23242f;border-radius:8px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="font-size:13px;font-weight:600;color:#f1f2f6">소프트웨어/IT</span><div style="display:flex;gap:6px;align-items:center"><span style="font-size:10px;font-weight:700;background:rgba(245,158,11,0.1);color:#f59e0b;border-radius:4px;padding:2px 6px">RS 47.8</span><span style="font-size:11px;color:#22c55e;font-weight:600">+14.8%</span></div></div><div style="background:#1c1d24;border:1px solid #23242f;border-radius:8px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="font-size:13px;font-weight:600;color:#f1f2f6">전력/에너지</span><div style="display:flex;gap:6px;align-items:center"><span style="font-size:10px;font-weight:700;background:rgba(245,158,11,0.1);color:#f59e0b;border-radius:4px;padding:2px 6px">RS 43.8</span><span style="font-size:11px;color:#22c55e;font-weight:600">+12.9%</span></div></div></div><div style="margin-top:8px;padding:10px 12px;background:#1c1d24;border-radius:6px;font-size:12px;color:#9ca3af">💬 KOSPI200 -4.1% (오늘), KOSDAQ150 보합권</div><div style="margin-top:8px;padding:10px 12px;background:#1c1d24;border-radius:6px;font-size:12px;color:#9ca3af">💬 방산 섹터 ETF RS 최하위 — 개별 종목 모멘텀과 괴리</div><div style="margin-top:8px;padding:10px 12px;background:#1c1d24;border-radius:6px;font-size:12px;color:#9ca3af">💬 전체 시장 52주 신고가 종목 수 감소 중 (ADR 악화 징후)</div></div>
+        </div></div><div style="margin-top:8px;padding:10px 12px;background:#1c1d24;border-radius:6px;font-size:12px;color:#9ca3af">💬 현재 52주 신고가 조건 충족 종목 없음 — 시장 전반 조정 구간</div><div style="margin-top:8px;padding:10px 12px;background:#1c1d24;border-radius:6px;font-size:12px;color:#9ca3af">💬 손절 -8% 기준 리스크 관리 필수</div><div style="margin-top:8px;padding:10px 12px;background:#1c1d24;border-radius:6px;font-size:12px;color:#9ca3af">💬 추세 회복 + 신고가 돌파 시 진입 — 급하게 사지 말 것</div><div style="display:flex;align-items:center;gap:10px;margin:24px 0 14px"><span style="font-size:16px">📈</span><span style="font-size:13px;font-weight:700;color:#f1f2f6;letter-spacing:-0.2px">섹터 RS 랭킹</span><span style="flex:1;height:1px;background:#23242f"></span></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px"><div><div style="font-size:10px;font-weight:700;letter-spacing:1.2px;color:#22c55e;text-transform:uppercase;margin-bottom:8px">▲ 상위 5 섹터</div><div style="background:#1c1d24;border-radius:6px;padding:8px 12px;margin-bottom:6px;border-left:3px solid #22c55e">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+    <span style="font-size:12px;font-weight:700;color:#f1f2f6">1. 반도체</span>
+    <span style="font-size:12px;font-weight:700;color:#22c55e">+32.7%</span>
+  </div>
+  <div style="height:4px;background:#23242f;border-radius:2px"><div style="width:61%;height:100%;background:#22c55e;border-radius:2px"></div></div>
+  <div style="font-size:10px;color:#6b7280;margin-top:3px">RS 67.8</div>
+</div><div style="background:#1c1d24;border-radius:6px;padding:8px 12px;margin-bottom:6px;border-left:3px solid #22c55e">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+    <span style="font-size:12px;font-weight:700;color:#f1f2f6">2. 2차전지</span>
+    <span style="font-size:12px;font-weight:700;color:#22c55e">+22.3%</span>
+  </div>
+  <div style="height:4px;background:#23242f;border-radius:2px"><div style="width:49%;height:100%;background:#22c55e;border-radius:2px"></div></div>
+  <div style="font-size:10px;color:#6b7280;margin-top:3px">RS 55.3</div>
+</div><div style="background:#1c1d24;border-radius:6px;padding:8px 12px;margin-bottom:6px;border-left:3px solid #22c55e">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+    <span style="font-size:12px;font-weight:700;color:#f1f2f6">3. 자동차</span>
+    <span style="font-size:12px;font-weight:700;color:#22c55e">+16.2%</span>
+  </div>
+  <div style="height:4px;background:#23242f;border-radius:2px"><div style="width:45%;height:100%;background:#22c55e;border-radius:2px"></div></div>
+  <div style="font-size:10px;color:#6b7280;margin-top:3px">RS 50.2</div>
+</div><div style="background:#1c1d24;border-radius:6px;padding:8px 12px;margin-bottom:6px;border-left:3px solid #22c55e">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+    <span style="font-size:12px;font-weight:700;color:#f1f2f6">4. 광통신/네트워크</span>
+    <span style="font-size:12px;font-weight:700;color:#22c55e">+15.8%</span>
+  </div>
+  <div style="height:4px;background:#23242f;border-radius:2px"><div style="width:43%;height:100%;background:#22c55e;border-radius:2px"></div></div>
+  <div style="font-size:10px;color:#6b7280;margin-top:3px">RS 48.6</div>
+</div><div style="background:#1c1d24;border-radius:6px;padding:8px 12px;margin-bottom:6px;border-left:3px solid #22c55e">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+    <span style="font-size:12px;font-weight:700;color:#f1f2f6">5. 소프트웨어/IT</span>
+    <span style="font-size:12px;font-weight:700;color:#22c55e">+14.8%</span>
+  </div>
+  <div style="height:4px;background:#23242f;border-radius:2px"><div style="width:43%;height:100%;background:#22c55e;border-radius:2px"></div></div>
+  <div style="font-size:10px;color:#6b7280;margin-top:3px">RS 47.8</div>
+</div></div><div><div style="font-size:10px;font-weight:700;letter-spacing:1.2px;color:#ef4444;text-transform:uppercase;margin-bottom:8px">▼ 하위 5 섹터</div><div style="background:#1c1d24;border-radius:6px;padding:8px 12px;margin-bottom:6px;border-left:3px solid #ef4444">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+    <span style="font-size:12px;font-weight:700;color:#f1f2f6">6. 전력/에너지</span>
+    <span style="font-size:12px;font-weight:700;color:#22c55e">+12.9%</span>
+  </div>
+  <div style="height:4px;background:#23242f;border-radius:2px"><div style="width:39%;height:100%;background:#ef4444;border-radius:2px"></div></div>
+  <div style="font-size:10px;color:#6b7280;margin-top:3px">RS 43.8</div>
+</div><div style="background:#1c1d24;border-radius:6px;padding:8px 12px;margin-bottom:6px;border-left:3px solid #ef4444">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+    <span style="font-size:12px;font-weight:700;color:#f1f2f6">5. 소프트웨어/IT</span>
+    <span style="font-size:12px;font-weight:700;color:#22c55e">+14.8%</span>
+  </div>
+  <div style="height:4px;background:#23242f;border-radius:2px"><div style="width:43%;height:100%;background:#ef4444;border-radius:2px"></div></div>
+  <div style="font-size:10px;color:#6b7280;margin-top:3px">RS 47.8</div>
+</div><div style="background:#1c1d24;border-radius:6px;padding:8px 12px;margin-bottom:6px;border-left:3px solid #ef4444">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+    <span style="font-size:12px;font-weight:700;color:#f1f2f6">4. 광통신/네트워크</span>
+    <span style="font-size:12px;font-weight:700;color:#22c55e">+15.8%</span>
+  </div>
+  <div style="height:4px;background:#23242f;border-radius:2px"><div style="width:43%;height:100%;background:#ef4444;border-radius:2px"></div></div>
+  <div style="font-size:10px;color:#6b7280;margin-top:3px">RS 48.6</div>
+</div><div style="background:#1c1d24;border-radius:6px;padding:8px 12px;margin-bottom:6px;border-left:3px solid #ef4444">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+    <span style="font-size:12px;font-weight:700;color:#f1f2f6">3. 자동차</span>
+    <span style="font-size:12px;font-weight:700;color:#22c55e">+16.2%</span>
+  </div>
+  <div style="height:4px;background:#23242f;border-radius:2px"><div style="width:45%;height:100%;background:#ef4444;border-radius:2px"></div></div>
+  <div style="font-size:10px;color:#6b7280;margin-top:3px">RS 50.2</div>
+</div><div style="background:#1c1d24;border-radius:6px;padding:8px 12px;margin-bottom:6px;border-left:3px solid #ef4444">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+    <span style="font-size:12px;font-weight:700;color:#f1f2f6">2. 2차전지</span>
+    <span style="font-size:12px;font-weight:700;color:#22c55e">+22.3%</span>
+  </div>
+  <div style="height:4px;background:#23242f;border-radius:2px"><div style="width:49%;height:100%;background:#ef4444;border-radius:2px"></div></div>
+  <div style="font-size:10px;color:#6b7280;margin-top:3px">RS 55.3</div>
+</div></div></div><div style="padding:20px;background:#1c1d24;border-radius:8px;font-size:12px;color:#6b7280;text-align:center;margin-top:16px">📈 섹터 순위 추세 차트 — 데이터 누적 중 (현재 1일 / 최소 2일 필요)</div><div style="margin-top:8px;padding:10px 12px;background:#1c1d24;border-radius:6px;font-size:12px;color:#9ca3af">💬 KOSPI200 -4.1% (오늘), KOSDAQ150 보합권</div><div style="margin-top:8px;padding:10px 12px;background:#1c1d24;border-radius:6px;font-size:12px;color:#9ca3af">💬 방산 섹터 ETF RS 최하위 — 개별 종목 모멘텀과 괴리</div><div style="margin-top:8px;padding:10px 12px;background:#1c1d24;border-radius:6px;font-size:12px;color:#9ca3af">💬 전체 시장 52주 신고가 종목 수 감소 중 (ADR 악화 징후)</div></div>
     <div id="d20260331tup" class="tab-panel"><div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px;padding:14px 16px;background:#1c1d24;border-radius:10px;border:1px solid #23242f">
       <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
         <span style="padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;background:rgba(245,158,11,0.08);color:#f59e0b;border:1px solid #f59e0b33">미국 시장 혼조</span>
