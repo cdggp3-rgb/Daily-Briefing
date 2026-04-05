@@ -564,6 +564,26 @@
           <div style="font-size:11px;color:#9ca3af;line-height:1.6">미국 빅테크 AI 투자 지속 → 국내 AI/클라우드 소프트웨어 밸류에이션 영향</div>
         </div></div></div>
     <div id="pgtvp" class="tab-panel"><div style="margin-bottom:28px">
+  <div style="margin-bottom:20px">
+    <div style="font-size:16px;font-weight:700;color:#f1f2f6;margin-bottom:8px">🔍 모멘텀 매칭 — 수혜 기업 검색</div>
+    <div style="font-size:11px;color:#6b7280;margin-bottom:12px">이벤트/키워드 입력 → 477개 기업 DB에서 수혜 기업 자동 매칭 (예: 호르무즈, 반도체, 전력난, 방산, AI)</div>
+    <div style="display:flex;gap:8px;margin-bottom:12px">
+      <input id="momentumSearch" type="text" placeholder="키워드 입력 (예: 호르무즈 봉쇄)"
+        style="flex:1;padding:10px 14px;background:#1c1d24;border:1px solid #23242f;border-radius:8px;color:#f1f2f6;font-size:13px;outline:none"
+        onkeyup="if(event.key==='Enter')searchMomentum()">
+      <button onclick="searchMomentum()" style="padding:10px 20px;background:#3b82f6;color:white;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer">검색</button>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">
+      <span onclick="document.getElementById('momentumSearch').value='호르무즈 봉쇄';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">호르무즈 봉쇄</span>
+      <span onclick="document.getElementById('momentumSearch').value='반도체 슈퍼사이클';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">반도체 슈퍼사이클</span>
+      <span onclick="document.getElementById('momentumSearch').value='전력난';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">전력난</span>
+      <span onclick="document.getElementById('momentumSearch').value='방산 수출';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">방산 수출</span>
+      <span onclick="document.getElementById('momentumSearch').value='AI 데이터센터';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">AI 데이터센터</span>
+      <span onclick="document.getElementById('momentumSearch').value='유가 상승';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">유가 상승</span>
+      <span onclick="document.getElementById('momentumSearch').value='ESS 배터리';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">ESS 배터리</span>
+    </div>
+    <div id="momentumResults" style="display:none;margin-bottom:16px"></div>
+  </div>
   <div style="margin-bottom:16px">
     <div style="font-size:16px;font-weight:700;color:#f1f2f6;margin-bottom:12px">🔥 오늘의 핫 이슈</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px"><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 이란-이스라엘 전쟁 확전, 호르무즈 봉쇄 현실화 — F-35i '아디르' 투입 이란 발사대 50곳+ 타격. ...</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">IRGC·UAE</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 유가 WTI $110 돌파 — 호르무즈 리스크 프리미엄 반영. COP·OXY·BP 52주 신고가. SKYQ ...</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">WTI·COP·OXY·BP·SKYQ</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 미국 고용 견조 + 인플레 재점화 — 신규 실업청구 202K(예상 212K 하회). Amazon FBA 3....</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">FBA</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 시황/매크로 — 주목 종목</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">OXY·COP·BP·USO·SKYQ·한화에어로스페이스·LIG넥스원·S-Oil</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 광통신/실리콘 포토닉스 — 엔비디아 Marvell $20억 투자로 수직계열화 확인. LITE +6.8% 역사...</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">LITE·CIEN·RF</div></div></div>
@@ -1047,5 +1067,60 @@
     </div>
 </div>
 <div class="footer">DailyBrief &nbsp;·&nbsp; 2026-04-03 &nbsp;·&nbsp; Generated by Claude Code</div>
+<script>
+var _companyDB=null;
+var _eventMap={
+  "호르무즈":["LNG","가스","석유","해운","파이프","배관","강관","에너지","정유","원유"],
+  "이란":["방산","무기","미사일","원유","에너지","LNG","방위","군수"],
+  "반도체":["반도체","메모리","DRAM","NAND","HBM","패키징","장비","소재","웨이퍼"],
+  "전력":["전력","변압기","발전","원전","태양광","풍력","ESS","송전","배전"],
+  "AI":["데이터센터","서버","GPU","냉각","전력","광통신","클라우드"],
+  "방산":["방산","무기","미사일","전차","함정","레이더","항공기","군수"],
+  "배터리":["배터리","2차전지","양극재","음극재","전해액","분리막","ESS","리튬"],
+  "우주":["우주","위성","발사체","로켓","항공","저궤도"],
+  "유가":["정유","석유","LNG","가스","해운","석유화학","에너지"],
+  "풍력":["풍력","타워","하부구조","해상풍력","블레이드"],
+  "로봇":["로봇","자동화","모터","감속기","서보"],
+};
+function loadCompanyDB(cb){if(_companyDB)return cb();fetch('company_search.json').then(r=>r.json()).then(d=>{_companyDB=d;cb()}).catch(()=>{document.getElementById('momentumResults').innerHTML='<div style="color:#ef4444;padding:12px">DB 로드 실패</div>';document.getElementById('momentumResults').style.display='block'})}
+function searchMomentum(){
+  var q=document.getElementById('momentumSearch').value.trim();
+  if(!q)return;
+  loadCompanyDB(function(){
+    var terms=[q];
+    for(var ev in _eventMap){if(q.indexOf(ev)>=0||ev.indexOf(q)>=0)terms=terms.concat(_eventMap[ev])}
+    q.split(' ').forEach(function(w){if(w)terms.push(w)});
+    var scored=[];
+    _companyDB.forEach(function(co){
+      var score=0,matched=[];
+      terms.forEach(function(t){
+        co.t.forEach(function(tag){if(tag.indexOf(t)>=0||t.indexOf(tag)>=0){score+=5;matched.push(tag)}});
+        if(co.s&&co.s.indexOf(t)>=0){var cnt=(co.s.match(new RegExp(t,'g'))||[]).length;score+=cnt*2;matched.push(t+'('+cnt+')')}
+      });
+      if(score>0)scored.push({n:co.n,c:co.c,t:co.t,score:score,m:[...new Set(matched)].slice(0,4)});
+    });
+    scored.sort(function(a,b){return b.score-a.score});
+    var top=scored.slice(0,8);
+    var html='<div style="font-size:12px;font-weight:700;color:#3b82f6;margin-bottom:8px">🔍 "'+q+'" 수혜 기업 ('+scored.length+'건 중 상위 '+top.length+'개)</div>';
+    if(top.length===0)html+='<div style="color:#6b7280;font-size:12px">매칭 결과 없음</div>';
+    else{
+      html+='<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px">';
+      top.forEach(function(r,i){
+        html+='<div style="background:#13141a;border:1px solid #23242f;border-radius:8px;padding:12px">';
+        html+='<div style="font-size:14px;font-weight:700;color:#f1f2f6;margin-bottom:4px">'+(i+1)+'. '+r.n+'</div>';
+        html+='<div style="font-size:10px;color:#6b7280;margin-bottom:6px">'+r.c+' · 점수 '+r.score+'</div>';
+        html+='<div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:4px">';
+        r.t.forEach(function(tag){html+='<span style="font-size:9px;padding:2px 6px;background:rgba(59,130,246,0.12);color:#3b82f6;border-radius:4px">'+tag+'</span>'});
+        html+='</div>';
+        html+='<div style="font-size:10px;color:#9ca3af">매칭: '+r.m.join(', ')+'</div>';
+        html+='</div>';
+      });
+      html+='</div>';
+    }
+    document.getElementById('momentumResults').innerHTML=html;
+    document.getElementById('momentumResults').style.display='block';
+  });
+}
+</script>
 </body>
 </html>

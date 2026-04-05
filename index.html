@@ -564,6 +564,26 @@
       <div style="font-size:11px;color:#6b7280"> 기준</div>
     </div><div style="display:flex;align-items:center;gap:8px;margin:24px 0 12px"><span>🗺</span><span style="font-size:13px;font-weight:700;color:#f1f2f6">섹터 히트맵 (S&P 500 기준)</span><span style="flex:1;height:1px;background:#23242f"></span></div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:6px;margin-bottom:8px"></div><div style="font-size:10px;color:#6b7280;margin-bottom:8px">★ = 52주 신고가 근접</div><div style="display:flex;align-items:center;gap:8px;margin:24px 0 12px"><span>🇰🇷</span><span style="font-size:13px;font-weight:700;color:#f1f2f6">한국장 연결 포인트</span><span style="flex:1;height:1px;background:#23242f"></span></div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px"></div></div>
     <div id="d20260405tvp" class="tab-panel"><div style="margin-bottom:28px">
+  <div style="margin-bottom:20px">
+    <div style="font-size:16px;font-weight:700;color:#f1f2f6;margin-bottom:8px">🔍 모멘텀 매칭 — 수혜 기업 검색</div>
+    <div style="font-size:11px;color:#6b7280;margin-bottom:12px">이벤트/키워드 입력 → 477개 기업 DB에서 수혜 기업 자동 매칭 (예: 호르무즈, 반도체, 전력난, 방산, AI)</div>
+    <div style="display:flex;gap:8px;margin-bottom:12px">
+      <input id="momentumSearch" type="text" placeholder="키워드 입력 (예: 호르무즈 봉쇄)"
+        style="flex:1;padding:10px 14px;background:#1c1d24;border:1px solid #23242f;border-radius:8px;color:#f1f2f6;font-size:13px;outline:none"
+        onkeyup="if(event.key==='Enter')searchMomentum()">
+      <button onclick="searchMomentum()" style="padding:10px 20px;background:#3b82f6;color:white;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer">검색</button>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">
+      <span onclick="document.getElementById('momentumSearch').value='호르무즈 봉쇄';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">호르무즈 봉쇄</span>
+      <span onclick="document.getElementById('momentumSearch').value='반도체 슈퍼사이클';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">반도체 슈퍼사이클</span>
+      <span onclick="document.getElementById('momentumSearch').value='전력난';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">전력난</span>
+      <span onclick="document.getElementById('momentumSearch').value='방산 수출';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">방산 수출</span>
+      <span onclick="document.getElementById('momentumSearch').value='AI 데이터센터';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">AI 데이터센터</span>
+      <span onclick="document.getElementById('momentumSearch').value='유가 상승';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">유가 상승</span>
+      <span onclick="document.getElementById('momentumSearch').value='ESS 배터리';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">ESS 배터리</span>
+    </div>
+    <div id="momentumResults" style="display:none;margin-bottom:16px"></div>
+  </div>
   <div style="margin-bottom:16px">
     <div style="font-size:16px;font-weight:700;color:#f1f2f6;margin-bottom:12px">🔥 오늘의 핫 이슈</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px"><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 이란-이스라엘 전쟁 격화 + 트럼프 48시간 최후통첩 — 트럼프가 이란에 '호르무즈 해협 개방 또는 협상' ...</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">석유화학</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 호르무즈 해협 일부 통과 재개 — 봉쇄 완화 시그널 — 이란이 필수물자·인도적 물자 선박 통행 허용 발표. ...</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">LPG</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 WTI $111.5 (+11.41%), F&G 19.3 극도의 공포 — S&P500 +0.11%, NASDA...</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">WTI·NASDAQ·VIX</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 시황/매크로 — 주목 종목</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">XOM·MU·LMT·NEE·MRK·PFE·LIN·TJX</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 메모리 구조적 전환 — 5년 장기 계약 체결 시작 — 하이퍼스케일러 CapEx에서 메모리 비중 8%→30%....</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">AI·GPU</div></div></div>
@@ -1332,6 +1352,26 @@
         </div></div></div>
     <div id="d20260404tup" class="tab-panel"><div style="color:#6b7280;padding:48px;text-align:center;font-size:13px">해외 시황 데이터가 없습니다 (07:30 이후 업데이트)</div></div>
     <div id="d20260404tvp" class="tab-panel"><div style="margin-bottom:28px">
+  <div style="margin-bottom:20px">
+    <div style="font-size:16px;font-weight:700;color:#f1f2f6;margin-bottom:8px">🔍 모멘텀 매칭 — 수혜 기업 검색</div>
+    <div style="font-size:11px;color:#6b7280;margin-bottom:12px">이벤트/키워드 입력 → 477개 기업 DB에서 수혜 기업 자동 매칭 (예: 호르무즈, 반도체, 전력난, 방산, AI)</div>
+    <div style="display:flex;gap:8px;margin-bottom:12px">
+      <input id="momentumSearch" type="text" placeholder="키워드 입력 (예: 호르무즈 봉쇄)"
+        style="flex:1;padding:10px 14px;background:#1c1d24;border:1px solid #23242f;border-radius:8px;color:#f1f2f6;font-size:13px;outline:none"
+        onkeyup="if(event.key==='Enter')searchMomentum()">
+      <button onclick="searchMomentum()" style="padding:10px 20px;background:#3b82f6;color:white;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer">검색</button>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">
+      <span onclick="document.getElementById('momentumSearch').value='호르무즈 봉쇄';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">호르무즈 봉쇄</span>
+      <span onclick="document.getElementById('momentumSearch').value='반도체 슈퍼사이클';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">반도체 슈퍼사이클</span>
+      <span onclick="document.getElementById('momentumSearch').value='전력난';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">전력난</span>
+      <span onclick="document.getElementById('momentumSearch').value='방산 수출';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">방산 수출</span>
+      <span onclick="document.getElementById('momentumSearch').value='AI 데이터센터';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">AI 데이터센터</span>
+      <span onclick="document.getElementById('momentumSearch').value='유가 상승';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">유가 상승</span>
+      <span onclick="document.getElementById('momentumSearch').value='ESS 배터리';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">ESS 배터리</span>
+    </div>
+    <div id="momentumResults" style="display:none;margin-bottom:16px"></div>
+  </div>
   <div style="margin-bottom:16px">
     <div style="font-size:16px;font-weight:700;color:#f1f2f6;margin-bottom:12px">🔥 오늘의 핫 이슈</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px"><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 호르무즈 해협 부분 개방 조짐 — 오만 선박 3척(VLCC 2+LNG 1) 통과, 일본 LNG선(미츠이OSK...</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">VLCC·LNG·LNG·OSK·WTI</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 3월 고용 서프라이즈 NFP +17.8만(예상 6.5만 대폭 상회) — 실업률 4.3%(예상 4.4% 하회)...</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">NFP·NFP</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 시황/매크로 — 주목 종목</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">방산(LMT, RTX, 한화에어로, LIG넥스원)·에너지(OXY, COP, S-Oil)·LNG(SK오션플랜트)·삼성전자(주간 핵심 변수)</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 에코프로·HD현대·아모레퍼시픽·LG씨엔에스·현대엘리베이터 대량보유 보고서 제출 — 기관 수급 변동 주시</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">HD·LG</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 HD현대중공업 신규 수주 계약 복수 건 공시 — 조선 백로그 지속 확대</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">현대중공업·HD</div></div></div>
@@ -2171,6 +2211,26 @@
           <div style="font-size:11px;color:#9ca3af;line-height:1.6">미국 빅테크 AI 투자 지속 → 국내 AI/클라우드 소프트웨어 밸류에이션 영향</div>
         </div></div></div>
     <div id="d20260403tvp" class="tab-panel"><div style="margin-bottom:28px">
+  <div style="margin-bottom:20px">
+    <div style="font-size:16px;font-weight:700;color:#f1f2f6;margin-bottom:8px">🔍 모멘텀 매칭 — 수혜 기업 검색</div>
+    <div style="font-size:11px;color:#6b7280;margin-bottom:12px">이벤트/키워드 입력 → 477개 기업 DB에서 수혜 기업 자동 매칭 (예: 호르무즈, 반도체, 전력난, 방산, AI)</div>
+    <div style="display:flex;gap:8px;margin-bottom:12px">
+      <input id="momentumSearch" type="text" placeholder="키워드 입력 (예: 호르무즈 봉쇄)"
+        style="flex:1;padding:10px 14px;background:#1c1d24;border:1px solid #23242f;border-radius:8px;color:#f1f2f6;font-size:13px;outline:none"
+        onkeyup="if(event.key==='Enter')searchMomentum()">
+      <button onclick="searchMomentum()" style="padding:10px 20px;background:#3b82f6;color:white;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer">검색</button>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">
+      <span onclick="document.getElementById('momentumSearch').value='호르무즈 봉쇄';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">호르무즈 봉쇄</span>
+      <span onclick="document.getElementById('momentumSearch').value='반도체 슈퍼사이클';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">반도체 슈퍼사이클</span>
+      <span onclick="document.getElementById('momentumSearch').value='전력난';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">전력난</span>
+      <span onclick="document.getElementById('momentumSearch').value='방산 수출';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">방산 수출</span>
+      <span onclick="document.getElementById('momentumSearch').value='AI 데이터센터';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">AI 데이터센터</span>
+      <span onclick="document.getElementById('momentumSearch').value='유가 상승';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">유가 상승</span>
+      <span onclick="document.getElementById('momentumSearch').value='ESS 배터리';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">ESS 배터리</span>
+    </div>
+    <div id="momentumResults" style="display:none;margin-bottom:16px"></div>
+  </div>
   <div style="margin-bottom:16px">
     <div style="font-size:16px;font-weight:700;color:#f1f2f6;margin-bottom:12px">🔥 오늘의 핫 이슈</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px"><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 이란-이스라엘 전쟁 확전, 호르무즈 봉쇄 현실화 — F-35i '아디르' 투입 이란 발사대 50곳+ 타격. ...</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">IRGC·UAE</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 유가 WTI $110 돌파 — 호르무즈 리스크 프리미엄 반영. COP·OXY·BP 52주 신고가. SKYQ ...</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">WTI·COP·OXY·BP·SKYQ</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 미국 고용 견조 + 인플레 재점화 — 신규 실업청구 202K(예상 212K 하회). Amazon FBA 3....</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">FBA</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 시황/매크로 — 주목 종목</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">OXY·COP·BP·USO·SKYQ·한화에어로스페이스·LIG넥스원·S-Oil</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 광통신/실리콘 포토닉스 — 엔비디아 Marvell $20억 투자로 수직계열화 확인. LITE +6.8% 역사...</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">LITE·CIEN·RF</div></div></div>
@@ -2773,6 +2833,26 @@
     <div id="d20260402tpp" class="tab-panel"><div style="color:#6b7280;padding:48px;text-align:center;font-size:13px">장 마감 후 탑픽 분석이 업데이트됩니다 (16:10 이후)</div></div>
     <div id="d20260402tup" class="tab-panel"><div style="color:#6b7280;padding:48px;text-align:center;font-size:13px">해외 시황 데이터가 없습니다 (07:30 이후 업데이트)</div></div>
     <div id="d20260402tvp" class="tab-panel"><div style="margin-bottom:28px">
+  <div style="margin-bottom:20px">
+    <div style="font-size:16px;font-weight:700;color:#f1f2f6;margin-bottom:8px">🔍 모멘텀 매칭 — 수혜 기업 검색</div>
+    <div style="font-size:11px;color:#6b7280;margin-bottom:12px">이벤트/키워드 입력 → 477개 기업 DB에서 수혜 기업 자동 매칭 (예: 호르무즈, 반도체, 전력난, 방산, AI)</div>
+    <div style="display:flex;gap:8px;margin-bottom:12px">
+      <input id="momentumSearch" type="text" placeholder="키워드 입력 (예: 호르무즈 봉쇄)"
+        style="flex:1;padding:10px 14px;background:#1c1d24;border:1px solid #23242f;border-radius:8px;color:#f1f2f6;font-size:13px;outline:none"
+        onkeyup="if(event.key==='Enter')searchMomentum()">
+      <button onclick="searchMomentum()" style="padding:10px 20px;background:#3b82f6;color:white;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer">검색</button>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">
+      <span onclick="document.getElementById('momentumSearch').value='호르무즈 봉쇄';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">호르무즈 봉쇄</span>
+      <span onclick="document.getElementById('momentumSearch').value='반도체 슈퍼사이클';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">반도체 슈퍼사이클</span>
+      <span onclick="document.getElementById('momentumSearch').value='전력난';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">전력난</span>
+      <span onclick="document.getElementById('momentumSearch').value='방산 수출';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">방산 수출</span>
+      <span onclick="document.getElementById('momentumSearch').value='AI 데이터센터';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">AI 데이터센터</span>
+      <span onclick="document.getElementById('momentumSearch').value='유가 상승';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">유가 상승</span>
+      <span onclick="document.getElementById('momentumSearch').value='ESS 배터리';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">ESS 배터리</span>
+    </div>
+    <div id="momentumResults" style="display:none;margin-bottom:16px"></div>
+  </div>
   <div style="margin-bottom:16px">
     <div style="font-size:16px;font-weight:700;color:#f1f2f6;margin-bottom:12px">🔥 오늘의 핫 이슈</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px"><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 이란·이스라엘 전쟁 현장은 여전히 격화 — 이스라엘군 테헤란 중심부 400회 이상 공격·이란 국방부 핵심단지...</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">IRGC</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 UAE 글로벌 알루미늄(EGA) 알 타웨일라 제련소 이란 공격으로 가동중단 — 연 160만톤 규모 세계 최대...</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">UAE·EGA·LME</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 시황/매크로 — 주목 종목</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">골드(GLD/IAU)·알루미늄(LME)·코노코필립스(COP)·에퀴닉스(EQIX)·템퍼스(TEM, AI 임상 성과)·어플라이드디지털(APLD, 코어위브 계약)·타겟호스피탈리티(TH, DC 숙소 계약 $550M)·보잉(PAC-3 7년 계약)</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 리서치 목표주가 상향 러시 — LS ELECTRIC 100만원(대신, AI DC 전력기기 수주 5~6조), ...</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">삼성SDI·삼성SDI·LS·ELECTRIC·AI·DC·SDI·IBK</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 2차전지 밸류체인 전면 업그레이드 — 삼성SDI P6 하이니켈 유럽향 2Q26, ESS CAPA 42GWh ...</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">삼성SDI·SDI·ESS·CAPA·GW·ESS·IAA</div></div></div>
@@ -3305,6 +3385,26 @@
     <div id="d20260401tpp" class="tab-panel"><div style="color:#6b7280;padding:48px;text-align:center;font-size:13px">장 마감 후 탑픽 분석이 업데이트됩니다 (16:10 이후)</div></div>
     <div id="d20260401tup" class="tab-panel"><div style="color:#6b7280;padding:48px;text-align:center;font-size:13px">해외 시황 데이터가 없습니다 (07:30 이후 업데이트)</div></div>
     <div id="d20260401tvp" class="tab-panel"><div style="margin-bottom:28px">
+  <div style="margin-bottom:20px">
+    <div style="font-size:16px;font-weight:700;color:#f1f2f6;margin-bottom:8px">🔍 모멘텀 매칭 — 수혜 기업 검색</div>
+    <div style="font-size:11px;color:#6b7280;margin-bottom:12px">이벤트/키워드 입력 → 477개 기업 DB에서 수혜 기업 자동 매칭 (예: 호르무즈, 반도체, 전력난, 방산, AI)</div>
+    <div style="display:flex;gap:8px;margin-bottom:12px">
+      <input id="momentumSearch" type="text" placeholder="키워드 입력 (예: 호르무즈 봉쇄)"
+        style="flex:1;padding:10px 14px;background:#1c1d24;border:1px solid #23242f;border-radius:8px;color:#f1f2f6;font-size:13px;outline:none"
+        onkeyup="if(event.key==='Enter')searchMomentum()">
+      <button onclick="searchMomentum()" style="padding:10px 20px;background:#3b82f6;color:white;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer">검색</button>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">
+      <span onclick="document.getElementById('momentumSearch').value='호르무즈 봉쇄';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">호르무즈 봉쇄</span>
+      <span onclick="document.getElementById('momentumSearch').value='반도체 슈퍼사이클';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">반도체 슈퍼사이클</span>
+      <span onclick="document.getElementById('momentumSearch').value='전력난';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">전력난</span>
+      <span onclick="document.getElementById('momentumSearch').value='방산 수출';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">방산 수출</span>
+      <span onclick="document.getElementById('momentumSearch').value='AI 데이터센터';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">AI 데이터센터</span>
+      <span onclick="document.getElementById('momentumSearch').value='유가 상승';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">유가 상승</span>
+      <span onclick="document.getElementById('momentumSearch').value='ESS 배터리';searchMomentum()" style="padding:4px 10px;background:#1c1d24;border:1px solid #23242f;border-radius:16px;font-size:10px;color:#6b7280;cursor:pointer">ESS 배터리</span>
+    </div>
+    <div id="momentumResults" style="display:none;margin-bottom:16px"></div>
+  </div>
   <div style="margin-bottom:16px">
     <div style="font-size:16px;font-weight:700;color:#f1f2f6;margin-bottom:12px">🔥 오늘의 핫 이슈</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px"><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 미-이란 전쟁 종전 시그널 vs 현장 충돌 확대 디커플링 — 트럼프 '2~3주 내 종전' 발언으로 유가 4%...</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">TACO</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 IEA, 현 원유공급 충격을 역대 최악으로 규정 — 하루 1,200만 bpd 공급 손실. 1970년대 오일쇼...</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">IEA</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 미국 금융조건지수(FCI) 99.17로 급격 긴축 — 20일간 0.77p 상승은 연준 2022년 금리인상 이...</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">FCI</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 시황/매크로 — 주목 종목</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">보잉(PAC-3 7년 계약)·록히드마틴(PAC-3 MSE 3배)·LNG생산·수출사·Novo Nordisk(Wegovy NICE 권고)·아마존(Buy for Me AI커머스)</div></div><div style="background:#1c1d24;border:1px solid #23242f;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:10px 14px;min-width:0"><div style="font-size:10px;font-weight:700;color:#f59e0b;letter-spacing:0.8px;margin-bottom:4px">🔥 한화에어로스페이스, 폴란드 향 부품공급+라이선스 계약 2건 합계 2조3,651억(매출대비 21%) 체결. 방...</div><div style="font-size:11px;color:#9ca3af;line-height:1.6">한화에어로</div></div></div>
