@@ -203,7 +203,7 @@
 <script>
 var _companyDB=null;
 var _eventMap={"호르무즈": ["LNG", "가스", "석유", "해운", "파이프", "배관", "강관", "에너지", "정유", "원유"], "이란": ["방산", "무기", "미사일", "원유", "에너지", "LNG", "방위", "군수"], "반도체": ["반도체", "메모리", "DRAM", "NAND", "HBM", "패키징", "장비", "소재", "웨이퍼", "기판"], "전력": ["전력", "변압기", "발전", "원전", "태양광", "풍력", "ESS", "송전", "배전", "전선"], "AI": ["데이터센터", "서버", "GPU", "냉각", "전력", "광통신", "클라우드", "HBM"], "방산": ["방산", "무기", "미사일", "전차", "함정", "레이더", "항공기", "군수", "탄약"], "배터리": ["배터리", "2차전지", "양극재", "음극재", "전해액", "분리막", "ESS", "리튬", "LFP"], "우주": ["우주", "위성", "발사체", "로켓", "항공", "저궤도", "SAR"], "유가": ["정유", "석유", "LNG", "가스", "해운", "석유화학", "에너지", "나프타"], "풍력": ["풍력", "타워", "하부구조", "해상풍력", "블레이드", "터빈"], "로봇": ["로봇", "자동화", "모터", "감속기", "서보", "휴머노이드"], "전기차": ["전기차", "EV", "배터리", "충전", "모터", "인버터", "BMS"], "수소": ["수소", "연료전지", "수전해", "암모니아", "그린수소"], "원전": ["원전", "원자력", "SMR", "우라늄", "터빈", "두산에너빌리티", "한전기술"], "조선": ["조선", "LNG운반선", "컨테이너선", "해운", "엔진", "프로펠러"], "바이오": ["바이오", "제약", "신약", "임상", "CDO", "ADC", "GLP-1", "비만"], "구리": ["구리", "전선", "비철금속", "제련", "동박", "PCB"], "광통신": ["광통신", "광케이블", "광섬유", "CPO", "실리콘포토닉스", "트랜시버"], "데이터센터": ["데이터센터", "서버", "냉각", "UPS", "전력", "광통신", "변압기"], "중동재건": ["건설", "플랜트", "EPC", "중동", "정유", "화학", "인프라"], "알루미늄": ["알루미늄", "비철금속", "제련", "경량화", "항공"], "비료": ["비료", "요소", "암모니아", "칼륨", "인산", "식량"], "게임": ["게임", "콘텐츠", "IP", "플랫폼", "엔터"], "K뷰티": ["화장품", "뷰티", "ODM", "브랜드", "소비재"], "HBM": ["HBM", "고대역폭", "메모리", "TSV", "패키징", "SK하이닉스"], "NAND": ["NAND", "SSD", "낸드", "플래시", "스토리지"], "변압기": ["변압기", "초고압", "전력기기", "GIS", "차단기", "배전"], "스태그플레이션": ["인플레", "금리", "물가", "채권", "금", "원자재"], "환율": ["환율", "달러", "원화", "수출", "수입", "무역"], "트럼프": ["관세", "무역전쟁", "IRA", "보조금", "리쇼어링"]};
-var _todayMentioned=["대한광통신·쏠리드", "에코프로", "LNG", "SK하이닉스", "알코아", "SpaceX 관련", "방산", "방산주", "RFHIC", "헬스케어", "삼성전자", "광통신·PCB", "우주 광통신", "천연가스 인프라", "매크로 역발상", "HD현대중공업", "에너지", "HFR", "KMW", "반도체", "엘앤에프", "HD현대", "핵심광물", "비츠로셀", "나비오스 마리타임", "AMZN", "삼성전자·SK하이닉스", "스마트 안경", "해운·탱커", "GOOGL", "수급빈집 종목", "오이솔루션", "인텔", "ESS 소재", "바이오 CDMO", "SK오션플랜트", "SpaceX", "RF머트리얼즈", "해운·보험", "삼성SDI", "풍산", "알루미늄", "한화에어로스페이스", "루멘텀", "OpenAI/MS"];
+var _todayMentioned=["LNG", "ESS 소재", "바이오 CDMO", "RFHIC", "삼성전자·SK하이닉스", "알코아", "스마트 안경", "루멘텀", "HD현대중공업", "핵심광물", "매크로 역발상", "우주 광통신", "해운·탱커", "RF머트리얼즈", "에너지", "반도체", "광통신·PCB", "한화에어로스페이스", "HFR", "수급빈집 종목", "HD현대", "SK하이닉스", "SpaceX", "OpenAI/MS", "인텔", "방산주", "방산", "풍산", "AMZN", "SK오션플랜트", "나비오스 마리타임", "KMW", "에코프로", "비츠로셀", "삼성전자", "알루미늄", "천연가스 인프라", "대한광통신·쏠리드", "오이솔루션", "해운·보험", "SpaceX 관련", "엘앤에프", "삼성SDI", "GOOGL", "헬스케어"];
 var _todayReports=[];
 function loadCompanyDB(cb){if(_companyDB)return cb();fetch('/company_search.json').then(function(r){return r.json()}).then(function(d){_companyDB=d;cb()}).catch(function(){var el=document.getElementById('momentumResults');if(el){el.innerHTML='<div style="color:#ef4444;padding:12px">DB 로드 실패</div>';el.style.display='block'}})}
 function searchMomentum(){
@@ -226,7 +226,7 @@ function searchMomentum(){
         var badges=[];
         if(_todayMentioned.indexOf(co.n)>=0){badges.push('mentioned');score+=10}
         if(_todayReports.indexOf(co.n)>=0){badges.push('report');score+=8}
-        scored.push({n:co.n,c:co.c,t:co.t,score:score,m:matched.filter(function(v,i,a){return a.indexOf(v)===i}).slice(0,4),badges:badges})
+        scored.push({n:co.n,c:co.c,t:co.t,score:score,m:matched.filter(function(v,i,a){return a.indexOf(v)===i}).slice(0,4),badges:badges,price:co.price||null,chg:co.chg||null,rs:co.rs||null,high52:co.high52||false,vol:co.vol||null,ret1m:co.ret1m||null,ret3m:co.ret3m||null})
       }
     });
     scored.sort(function(a,b){return b.score-a.score});
@@ -243,6 +243,20 @@ function searchMomentum(){
         if(r.badges.indexOf('report')>=0)html+='<span style="font-size:9px;padding:1px 6px;background:rgba(59,130,246,0.15);color:#3b82f6;border-radius:4px">\ud83d\udcca \ub9ac\ud3ec\ud2b8</span>';
         html+='</div>';
         html+='<div style="font-size:10px;color:#6b7280;margin-bottom:6px">'+r.c+' \u00b7 \uc810\uc218 '+r.score+'</div>';
+        if(r.price){
+          var pColor=r.chg>=0?'#22c55e':'#ef4444';
+          html+='<div style="display:flex;align-items:baseline;gap:8px;margin-bottom:6px">';
+          html+='<span style="font-size:15px;font-weight:700;color:#f1f2f6">'+r.price.toLocaleString()+'\uc6d0</span>';
+          html+='<span style="font-size:11px;font-weight:600;color:'+pColor+'">'+(r.chg>=0?'+':'')+r.chg.toFixed(1)+'%</span>';
+          html+='</div>';
+          html+='<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px">';
+          if(r.rs!==null){var rsColor=r.rs>=70?'#22c55e':(r.rs>=40?'#f59e0b':'#ef4444');html+='<span style="font-size:9px;padding:1px 6px;border:1px solid '+rsColor+';color:'+rsColor+';border-radius:4px">RS '+r.rs.toFixed(0)+'</span>'}
+          if(r.high52)html+='<span style="font-size:9px;padding:1px 6px;background:rgba(34,197,94,0.15);color:#22c55e;border-radius:4px">52\uc8fc \uc2e0\uace0\uac00</span>';
+          if(r.vol&&r.vol>=1.5)html+='<span style="font-size:9px;padding:1px 6px;background:rgba(245,158,11,0.15);color:#f59e0b;border-radius:4px">\uac70\ub798\ub7c9\u2191 x'+r.vol.toFixed(1)+'</span>';
+          if(r.ret1m!==null){var mColor=r.ret1m>=0?'#22c55e':'#ef4444';html+='<span style="font-size:9px;color:'+mColor+'">1M '+(r.ret1m>=0?'+':'')+r.ret1m.toFixed(1)+'%</span>'}
+          if(r.ret3m!==null){var m3Color=r.ret3m>=0?'#22c55e':'#ef4444';html+='<span style="font-size:9px;color:'+m3Color+'">3M '+(r.ret3m>=0?'+':'')+r.ret3m.toFixed(1)+'%</span>'}
+          html+='</div>';
+        }
         html+='<div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:4px">';
         r.t.forEach(function(tag){html+='<span style="font-size:9px;padding:2px 6px;background:rgba(59,130,246,0.12);color:#3b82f6;border-radius:4px">'+tag+'</span>'});
         html+='</div>';
