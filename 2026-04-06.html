@@ -202,22 +202,14 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 var _companyDB=null;
-var _eventMap={
-  "호르무즈":["LNG","가스","석유","해운","파이프","배관","강관","에너지","정유","원유"],
-  "이란":["방산","무기","미사일","원유","에너지","LNG","방위","군수"],
-  "반도체":["반도체","메모리","DRAM","NAND","HBM","패키징","장비","소재","웨이퍼"],
-  "전력":["전력","변압기","발전","원전","태양광","풍력","ESS","송전","배전"],
-  "AI":["데이터센터","서버","GPU","냉각","전력","광통신","클라우드"],
-  "방산":["방산","무기","미사일","전차","함정","레이더","항공기","군수"],
-  "배터리":["배터리","2차전지","양극재","음극재","전해액","분리막","ESS","리튬"],
-  "우주":["우주","위성","발사체","로켓","항공","저궤도"],
-  "유가":["정유","석유","LNG","가스","해운","석유화학","에너지"],
-  "풍력":["풍력","타워","하부구조","해상풍력","블레이드"],
-  "로봇":["로봇","자동화","모터","감속기","서보"]
-};
-function loadCompanyDB(cb){if(_companyDB)return cb();fetch('/company_search.json').then(function(r){return r.json()}).then(function(d){_companyDB=d;cb()}).catch(function(){document.getElementById('momentumResults').innerHTML='<div style="color:#ef4444;padding:12px">DB 로드 실패</div>';document.getElementById('momentumResults').style.display='block'})};
+var _eventMap={"호르무즈": ["LNG", "가스", "석유", "해운", "파이프", "배관", "강관", "에너지", "정유", "원유"], "이란": ["방산", "무기", "미사일", "원유", "에너지", "LNG", "방위", "군수"], "반도체": ["반도체", "메모리", "DRAM", "NAND", "HBM", "패키징", "장비", "소재", "웨이퍼", "기판"], "전력": ["전력", "변압기", "발전", "원전", "태양광", "풍력", "ESS", "송전", "배전", "전선"], "AI": ["데이터센터", "서버", "GPU", "냉각", "전력", "광통신", "클라우드", "HBM"], "방산": ["방산", "무기", "미사일", "전차", "함정", "레이더", "항공기", "군수", "탄약"], "배터리": ["배터리", "2차전지", "양극재", "음극재", "전해액", "분리막", "ESS", "리튬", "LFP"], "우주": ["우주", "위성", "발사체", "로켓", "항공", "저궤도", "SAR"], "유가": ["정유", "석유", "LNG", "가스", "해운", "석유화학", "에너지", "나프타"], "풍력": ["풍력", "타워", "하부구조", "해상풍력", "블레이드", "터빈"], "로봇": ["로봇", "자동화", "모터", "감속기", "서보", "휴머노이드"], "전기차": ["전기차", "EV", "배터리", "충전", "모터", "인버터", "BMS"], "수소": ["수소", "연료전지", "수전해", "암모니아", "그린수소"], "원전": ["원전", "원자력", "SMR", "우라늄", "터빈", "두산에너빌리티", "한전기술"], "조선": ["조선", "LNG운반선", "컨테이너선", "해운", "엔진", "프로펠러"], "바이오": ["바이오", "제약", "신약", "임상", "CDO", "ADC", "GLP-1", "비만"], "구리": ["구리", "전선", "비철금속", "제련", "동박", "PCB"], "광통신": ["광통신", "광케이블", "광섬유", "CPO", "실리콘포토닉스", "트랜시버"], "데이터센터": ["데이터센터", "서버", "냉각", "UPS", "전력", "광통신", "변압기"], "중동재건": ["건설", "플랜트", "EPC", "중동", "정유", "화학", "인프라"], "알루미늄": ["알루미늄", "비철금속", "제련", "경량화", "항공"], "비료": ["비료", "요소", "암모니아", "칼륨", "인산", "식량"], "게임": ["게임", "콘텐츠", "IP", "플랫폼", "엔터"], "K뷰티": ["화장품", "뷰티", "ODM", "브랜드", "소비재"], "HBM": ["HBM", "고대역폭", "메모리", "TSV", "패키징", "SK하이닉스"], "NAND": ["NAND", "SSD", "낸드", "플래시", "스토리지"], "변압기": ["변압기", "초고압", "전력기기", "GIS", "차단기", "배전"], "스태그플레이션": ["인플레", "금리", "물가", "채권", "금", "원자재"], "환율": ["환율", "달러", "원화", "수출", "수입", "무역"], "트럼프": ["관세", "무역전쟁", "IRA", "보조금", "리쇼어링"]};
+var _todayMentioned=["한국첨단소재", "하이브", "SK이노베이션", "네패스아크", "후성", "한화시스템", "탑머티리얼", "대우건설", "NH투자증권", "애플", "풍산홀딩스", "테슬라", "삼천당제약", "에이피알", "롯데쇼핑", "폭스콘", "안두릴", "알루미늄", "한화에어로스페이스", "신세계", "LS전선", "삼미금속", "GS글로벌", "LS ELECTRIC", "에코프로", "알루코", "SK하이닉스", "이란 협상", "WTI", "다원시스", "BGF리테일", "라이온델바젤", "비에이치", "중국 AI", "씨에스윈드", "미래에셋증권", "엘앤에프", "남선알미늄", "에이텍", "DL이앤씨", "키움증권", "오이솔루션", "티이엠씨", "삼성E&A", "WTI유가", "삼성SDI", "풍산", "엔비디아", "아이티켐", "한화솔루션", "다우", "GS리테일", "태광", "임펄스 스페이스", "삼성전자", "에쓰오일", "한국콜마", "리노공업", "현대로템", "LG이노텍", "호르무즈 해협", "현대건설", "사우디 OSP", "LNG", "두산에너빌리티", "삼성증권", "대한광통신", "심텍", "OCI홀딩스", "LS일렉트릭", "삼성디스플레이", "HD현대에너지솔루션", "조일알미늄", "광전자", "LIG넥스원", "다날", "RF머트리얼즈", "창해에탄올", "메타"];
+var _todayReports=["SMH", "페리지에어로스페이스", "쏠리드(050890)", "CCJ", "두산에너빌리티", "S-Oil", "고려아연", "에이치브이엠", "비나텍", "유니드", "LUNR", "FCX", "루미르", "한화시스템", "비즈로넥스텍", "대우조선해양", "SPHQ", "LS", "대우건설", "씨에스윈드", "컨텍", "현대로템", "빛과전자(069540)", "엘앤에프", "현대차", "스피어", "HD현대에너지솔루션", "ARM", "MU", "롯데에너지머티리얼즈", "포스코인터내셔널", "DL이앤씨", "두산퓨얼셀", "한국첨단소재(062970)", "ROK", "SNX", "이노스페이스", "GOOGL", "롯데정밀화학", "NVDA", "오이솔루션(138080)", "세트렉아이", "AP위성", "POSCO홀딩스", "PAVE", "삼성E&A", "한화에어로스페이스", "나라스페이스테크놀로지", "현대건설", "COHR"];
+function loadCompanyDB(cb){if(_companyDB)return cb();fetch('/company_search.json').then(function(r){return r.json()}).then(function(d){_companyDB=d;cb()}).catch(function(){var el=document.getElementById('momentumResults');if(el){el.innerHTML='<div style="color:#ef4444;padding:12px">DB 로드 실패</div>';el.style.display='block'}})}
 function searchMomentum(){
-  var q=document.getElementById('momentumSearch').value.trim();
+  var el=document.getElementById('momentumSearch');
+  if(!el)return;
+  var q=el.value.replace(/^\s+|\s+$/g,'');
   if(!q)return;
   loadCompanyDB(function(){
     var terms=[q];
@@ -230,30 +222,42 @@ function searchMomentum(){
         co.t.forEach(function(tag){if(tag.indexOf(t)>=0||t.indexOf(tag)>=0){score+=5;matched.push(tag)}});
         if(co.s&&co.s.indexOf(t)>=0){var cnt=(co.s.match(new RegExp(t,'g'))||[]).length;score+=cnt*2;matched.push(t+'('+cnt+')')}
       });
-      if(score>0)scored.push({n:co.n,c:co.c,t:co.t,score:score,m:[].concat.apply([],matched).filter(function(v,i,a){return a.indexOf(v)===i}).slice(0,4)});
+      if(score>0){
+        var badges=[];
+        if(_todayMentioned.indexOf(co.n)>=0){badges.push('mentioned');score+=10}
+        if(_todayReports.indexOf(co.n)>=0){badges.push('report');score+=8}
+        scored.push({n:co.n,c:co.c,t:co.t,score:score,m:matched.filter(function(v,i,a){return a.indexOf(v)===i}).slice(0,4),badges:badges})
+      }
     });
     scored.sort(function(a,b){return b.score-a.score});
-    var top=scored.slice(0,8);
-    var html='<div style="font-size:12px;font-weight:700;color:#3b82f6;margin-bottom:8px">🔍 "'+q+'" 수혜 기업 ('+scored.length+'건 중 상위 '+top.length+'개)</div>';
-    if(top.length===0)html+='<div style="color:#6b7280;font-size:12px">매칭 결과 없음</div>';
+    var top=scored.slice(0,10);
+    var html='<div style="font-size:12px;font-weight:700;color:#3b82f6;margin-bottom:8px">\ud83d\udd0d "'+q+'" \uc218\ud61c \uae30\uc5c5 ('+scored.length+'\uac74 \uc911 \uc0c1\uc704 '+top.length+'\uac1c)</div>';
+    if(top.length===0)html+='<div style="color:#6b7280;font-size:12px">\ub9e4\uce6d \uacb0\uacfc \uc5c6\uc74c</div>';
     else{
-      html+='<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px">';
+      html+='<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px">';
       top.forEach(function(r,i){
-        html+='<div style="background:#13141a;border:1px solid #23242f;border-radius:8px;padding:12px">';
-        html+='<div style="font-size:14px;font-weight:700;color:#f1f2f6;margin-bottom:4px">'+(i+1)+'. '+r.n+'</div>';
-        html+='<div style="font-size:10px;color:#6b7280;margin-bottom:6px">'+r.c+' · 점수 '+r.score+'</div>';
+        html+='<div onclick="showStockDetail(\''+r.c+'\')" style="background:#13141a;border:1px solid #23242f;border-radius:8px;padding:12px;cursor:pointer;transition:border-color 0.2s" onmouseover="this.style.borderColor=\'#3b82f6\'" onmouseout="this.style.borderColor=\'#23242f\'">';
+        html+='<div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">';
+        html+='<span style="font-size:14px;font-weight:700;color:#f1f2f6">'+(i+1)+'. '+r.n+'</span>';
+        if(r.badges.indexOf('mentioned')>=0)html+='<span style="font-size:9px;padding:1px 6px;background:rgba(245,158,11,0.15);color:#f59e0b;border-radius:4px">\ud83d\udd25 \uc624\ub298 \uc5b8\uae09</span>';
+        if(r.badges.indexOf('report')>=0)html+='<span style="font-size:9px;padding:1px 6px;background:rgba(59,130,246,0.15);color:#3b82f6;border-radius:4px">\ud83d\udcca \ub9ac\ud3ec\ud2b8</span>';
+        html+='</div>';
+        html+='<div style="font-size:10px;color:#6b7280;margin-bottom:6px">'+r.c+' \u00b7 \uc810\uc218 '+r.score+'</div>';
         html+='<div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:4px">';
         r.t.forEach(function(tag){html+='<span style="font-size:9px;padding:2px 6px;background:rgba(59,130,246,0.12);color:#3b82f6;border-radius:4px">'+tag+'</span>'});
         html+='</div>';
-        html+='<div style="font-size:10px;color:#9ca3af">매칭: '+r.m.join(', ')+'</div>';
+        html+='<div style="font-size:10px;color:#9ca3af">\ub9e4\uce6d: '+r.m.join(', ')+'</div>';
         html+='</div>';
       });
       html+='</div>';
     }
-    document.getElementById('momentumResults').innerHTML=html;
-    document.getElementById('momentumResults').style.display='block';
+    var res=document.getElementById('momentumResults');
+    if(res){res.innerHTML=html;res.style.display='block'}
   });
-};
+}
+function showStockDetail(code){
+  window.open('https://finance.naver.com/item/main.naver?code='+code,'_blank');
+}
 </script>
 </head>
 <body>
