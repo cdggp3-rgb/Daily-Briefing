@@ -63,6 +63,30 @@
     .signal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(138px,1fr));gap:8px}
     @media(max-width:700px){.signal-grid{grid-template-columns:repeat(3,1fr)}}
     @media(max-width:400px){.signal-grid{grid-template-columns:repeat(2,1fr)}}
+
+    /* ── 모바일 반응형 강화 ── */
+    @media(max-width:600px){
+      /* ETF 랭킹 테이블: 6열→4열 축소 (전주/모멘텀/연속 숨김) */
+      [style*="grid-template-columns:28px 1fr 60px 60px 24px 60px"]{
+        grid-template-columns:24px 1fr 55px !important;
+      }
+      [style*="grid-template-columns:28px 1fr 60px 60px 24px 60px"] > :nth-child(4),
+      [style*="grid-template-columns:28px 1fr 60px 60px 24px 60px"] > :nth-child(5),
+      [style*="grid-template-columns:28px 1fr 60px 60px 24px 60px"] > :nth-child(6){
+        display:none !important;
+      }
+      /* 섹터 로테이션 바: 이름 너비 축소 */
+      [style*="width:110px"]{width:70px !important;font-size:10px !important}
+      [style*="width:120px"]{width:80px !important;font-size:10px !important}
+      /* ETF 카드 그리드 축소 */
+      [style*="minmax(155px"]{grid-template-columns:repeat(auto-fill,minmax(120px,1fr)) !important}
+      /* 리서치센터 갭 그리드 1열 */
+      [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}
+      /* 탑픽 섹터 RS 그리드 */
+      [style*="grid-template-columns:1fr 1fr;gap:12px"]{grid-template-columns:1fr !important}
+      /* 기본 폰트 축소 */
+      .tab-panel{font-size:13px}
+    }
     .signal-divider{font-size:9px;font-weight:700;letter-spacing:1.5px;color:#6b7280;text-transform:uppercase;padding:12px 0 6px;display:flex;align-items:center;gap:8px}
     .signal-divider::after{content:'';flex:1;height:1px;background:#23242f}
     .sig-card{background:#1c1d24;border-radius:8px;padding:10px 12px;border-left:3px solid transparent;transition:opacity .2s}
